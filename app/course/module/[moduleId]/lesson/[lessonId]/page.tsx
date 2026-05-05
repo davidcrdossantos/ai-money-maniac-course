@@ -158,24 +158,7 @@ export default function LessonPage() {
             </div>
           </motion.div>
 
-          {/* Video Embed (if available) */}
-          {lesson?.videoUrl && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="mb-8"
-            >
-              <div className="aspect-video rounded-xl overflow-hidden bg-gray-800">
-                <iframe
-                  src={lesson.videoUrl}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </motion.div>
-          )}
+
 
           {/* Lesson Content */}
           <motion.div
