@@ -33,6 +33,14 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <script src="https://apps.abacus.ai/chatllm/appllm-lib.js"></script>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4MDV9WWY12"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4MDV9WWY12');
+        `}} />
       </head>
       <body className={`${inter.className} bg-gray-900 text-white antialiased`}>
         <Providers>
