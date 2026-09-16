@@ -19,963 +19,676 @@ export interface Module {
 export const courseModules: Module[] = [
   {
     id: 1,
-    title: "Foundations of AI for Income",
-    description: "The minimum you need to understand about AI to use it intelligently and profitably.",
-    outcome: "Students understand how AI systems work well enough to build with them, not just experiment.",
+    title: "Your AI Operating System",
+    description: "Build a personal AI stack that actually fits together — without overlapping subscriptions or tool hoarding.",
+    outcome: "Students have a lean, purposeful AI toolkit ready to generate income, not just experiment.",
     icon: "Brain",
     lessons: [
       {
         id: 1,
-        title: "What AI Actually Is",
-        description: "LLMs, generative AI, agents and automation explained plainly",
+        title: "The 2027 AI Landscape in Plain English",
+        description: "What changed, what matters, and what to ignore",
         duration: "15 min",
-        content: `<h2>Welcome to AI Money Maniac</h2>
-<p>Before you can make money with AI, you need to understand what you're working with. This isn't a computer science lecture — it's the practical knowledge you need to use these tools intelligently in 2026.</p>
+        content: `<h2>What You Actually Need to Know</h2>
+<p>By early 2027, AI has moved from novelty to infrastructure. Understanding the landscape isn't optional — it's the difference between using tools intelligently and burning money on things that don't compound.</p>
 
-<h3>Large Language Models (LLMs)</h3>
-<p>LLMs like Claude, ChatGPT, and Gemini are the core of most AI tools you'll use. They're trained on massive amounts of text and learn to predict what words should come next. That deceptively simple idea powers everything from writing emails to generating code to running autonomous agents.</p>
-
-<h3>Generative AI</h3>
-<p>AI that creates new content — text, images, video, audio, and code. Unlike traditional software that follows rigid rules, generative AI produces unique outputs every time based on your instructions.</p>
-
-<h3>AI Agents — The 2026 Shift</h3>
-<p>Agents are AI systems that don't just answer questions — they plan, reason, use tools, and take autonomous actions. An agent might research a topic, write a report, send it by email, and schedule a follow-up, all from a single instruction. In 2026, agents are how serious users work.</p>
-
-<h3>The Landscape Right Now (May 2026)</h3>
+<h3>The Current Foundation Models</h3>
 <ul>
-<li><strong>Multi-agent workflows</strong> are mainstream — teams run multiple Claude instances simultaneously</li>
-<li><strong>Desktop agents</strong> (Claude Dispatch, OpenClaw) work on your computer while you do other things</li>
-<li><strong>Vibe coding</strong> — describing apps in plain English and having AI build them — is standard practice</li>
-<li><strong>Local models</strong> via Ollama mean capable AI with zero API costs</li>
+<li><strong>Claude (Anthropic):</strong> Sonnet 5 and Fable 5.1 are the current workhorse and flagship. Best-in-class for reasoning, long documents, complex instructions, and coding. Claude Code is the preferred terminal agent for most serious builders.</li>
+<li><strong>GPT-6 (OpenAI):</strong> Strong general capability. The Codex app is now a standalone product — not just an API — and handles parallel coding tasks in cloud sandboxes. Good for users already in the OpenAI ecosystem.</li>
+<li><strong>Gemini 3.8 (Google):</strong> Deep Google Workspace integration. Free tier remains generous. Gemini CLI gives you a capable model at zero API cost for lighter work.</li>
+<li><strong>Open-weight models (Qwen 3.8, Llama 4, Mistral Large):</strong> Run locally via Ollama at zero ongoing cost. Genuinely capable for many tasks. Important for privacy-sensitive client work.</li>
 </ul>
 
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Action Step: Get Set Up Today</h4>
-<ol class="mt-2 space-y-2">
-<li><strong>Step 1:</strong> Sign up for Claude at claude.ai (free tier available)</li>
-<li><strong>Step 2:</strong> Sign up for ChatGPT at chat.openai.com (free tier available)</li>
-<li><strong>Step 3:</strong> Try the same prompt in both — compare the results</li>
-<li><strong>Step 4:</strong> Experiment with 10 different use cases this week</li>
-</ol>
-</div>
+<h3>The Shift That Matters in 2027</h3>
+<p>In 2024, AI was reactive — you asked, it answered. In 2026 agents became possible. In 2027, <strong>agents are the default</strong>. The question isn't "can AI do this?" — it's "which agent, with which tools, connected to which data?"</p>
+<p>MCP (Model Context Protocol) became the standard way to connect AI to external tools and data. If you're building or selling AI services, understanding MCP is no longer optional.</p>
 
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 Key Takeaway</h4>
-<p>The biggest edge in 2026 isn't having access to AI — everyone does. It's knowing which AI to use, for what task, and how to direct it precisely. That's what this course teaches.</p>
+<h3>What Died (and What Replaced It)</h3>
+<ul>
+<li>Standalone prompt marketplaces — replaced by reusable agent skills and SOPs</li>
+<li>"AI writing tools" as a category — absorbed into every major writing app</li>
+<li>Charging clients for "AI content" as a mystery — clients now know what it costs and expect transparency</li>
+</ul>
+
+<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
+<h4>📋 Action: Set Up Your Baseline Stack This Week</h4>
+<ol class="mt-2 space-y-2">
+<li>Claude.ai — create a free account, upgrade to Pro ($20/month) when ready</li>
+<li>Perplexity — best for research with real citations, free tier is sufficient to start</li>
+<li>Ollama — install locally for free model access (ollama.ai)</li>
+<li>Make — create a free account at make.com (automation layer)</li>
+</ol>
 </div>`
       },
       {
         id: 2,
-        title: "Prompting Fundamentals",
-        description: "Master structured prompting to get professional-grade outputs every time",
-        duration: "20 min",
-        content: `<h2>The Art and Science of Prompting</h2>
-<p>Your prompts determine your outputs. A vague prompt gives vague results. A structured prompt gives professional-grade content. This is the highest-leverage skill in your entire AI toolkit.</p>
+        title: "Choosing the Right Model for Each Job",
+        description: "A practical decision framework — not a specs comparison",
+        duration: "18 min",
+        content: `<h2>Stop Switching Models Randomly</h2>
+<p>Most people use one model for everything, or switch constantly based on hype. Neither approach is optimal. Here is a practical framework for 2027.</p>
 
-<h3>The CRISP Framework</h3>
-<ul>
-<li><strong>C</strong>ontext — Set the scene and provide background</li>
-<li><strong>R</strong>ole — Tell the AI who to be (expert, editor, analyst)</li>
-<li><strong>I</strong>nstruction — Clear, specific directions</li>
-<li><strong>S</strong>pecifics — Format, tone, length constraints</li>
-<li><strong>P</strong>reference — Your style and any hard rules</li>
-</ul>
+<h3>The Decision Matrix</h3>
+<table class="w-full text-left mt-4">
+<tr class="border-b border-gray-700"><th class="pb-2">Task</th><th class="pb-2">Best Choice</th><th class="pb-2">Why</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Long document analysis</td><td>Claude Sonnet 5</td><td>200K+ context, best reasoning</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Research with citations</td><td>Perplexity</td><td>Real sources, not hallucinations</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Complex coding (terminal)</td><td>Claude Code</td><td>Best reasoning on hard problems</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Parallel coding tasks</td><td>Codex app</td><td>Cloud sandboxes, GitHub integration</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Daily IDE coding</td><td>Cursor or Windsurf</td><td>Best developer experience</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Build app from description</td><td>Bolt.new or Lovable</td><td>No-code to deployed in an hour</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Google Workspace tasks</td><td>Gemini 3.8</td><td>Native integration, free tier</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Privacy-sensitive work</td><td>Ollama (local)</td><td>Data never leaves your machine</td></tr>
+<tr><td class="py-2">Desktop agent tasks</td><td>Claude Dispatch or OpenClaw</td><td>Depends on setup — see Module 7</td></tr>
+</table>
 
-<h3>Example Transformation</h3>
-<div class="bg-red-900/30 p-4 rounded-lg mb-4">
-<p><strong>❌ Bad:</strong> "Write about marketing"</p>
-</div>
-<div class="bg-green-900/30 p-4 rounded-lg">
-<p><strong>✅ Good:</strong> "Act as a digital marketing expert. Write a 500-word blog post about email marketing for small e-commerce businesses. Include 3 actionable tips with real examples. Conversational tone. Use headers and bullet points."</p>
-</div>
+<h3>The Rule That Saves Money</h3>
+<p>Use the cheapest model that does the job reliably. Don't run Opus-class models for tasks that Sonnet handles fine. Don't pay for API calls for tasks a local model handles. Save the expensive models for genuinely hard problems.</p>
 
-<h3>Advanced Techniques</h3>
-<ul>
-<li><strong>Chain-of-thought:</strong> "Think through this step by step before answering" — dramatically improves reasoning</li>
-<li><strong>Few-shot learning:</strong> "Here are 3 examples of what I want: [examples]. Now do the same for: [task]"</li>
-<li><strong>Iterative refinement:</strong> "Make it 20% shorter" / "Add more specific examples" / "More direct tone"</li>
-<li><strong>Persona stacking:</strong> "You are a copywriter trained under David Ogilvy who specialises in B2B SaaS..."</li>
-</ul>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 Action Step: Build Your Prompt Library</h4>
-<ol class="mt-2 space-y-2">
-<li>Open a Google Doc titled "My Prompt Library"</li>
-<li>Create sections: Blog Posts, Ad Copy, Emails, Social Media, Research, Code</li>
-<li>Write one CRISP template per section with [PLACEHOLDERS] for variable parts</li>
-<li>Test each 3 times and refine — when one consistently works, lock it in</li>
-</ol>
-</div>`
+<h3>Claude Projects — Your Biggest Productivity Lever</h3>
+<p>Claude Projects give each ongoing client or project its own persistent context — instructions, files, and memory that carry across every conversation. Set one up for each client you work with. The briefing you write once stays active forever.</p>`
       },
       {
         id: 3,
-        title: "The 2026 AI Tool Landscape",
-        description: "Every layer of the AI stack explained — models, interfaces, agents, automation",
-        duration: "18 min",
-        content: `<h2>Building Your AI Infrastructure</h2>
-<p>The AI ecosystem has exploded. Understanding the layers helps you choose the right tool and avoid paying for features you don't need.</p>
+        title: "Chat vs Agents vs Automations",
+        description: "Understanding the three layers and when each one applies",
+        duration: "15 min",
+        content: `<h2>Three Different Things, Constantly Confused</h2>
 
-<h3>Layer 1: Foundation Models</h3>
-<ul>
-<li><strong>Claude Sonnet 4.6 / Opus 4.6</strong> (Anthropic) — Best reasoning, longest context. Top choice for serious builders.</li>
-<li><strong>GPT-4.5 / o3</strong> (OpenAI) — Strong general capability. o3 exceptional for multi-step coding via Codex.</li>
-<li><strong>Gemini 3.1 Pro</strong> (Google) — Free via Gemini CLI. Deep Google Workspace integration.</li>
-<li><strong>Local models via Ollama</strong> — Run Llama, Mistral on your machine. Zero API costs. Full privacy.</li>
-</ul>
+<h3>Layer 1: Chat (Interactive)</h3>
+<p>You type, it responds. You review, you iterate. Best for creative work, analysis, writing, and anything that benefits from your judgment at each step.</p>
+<p><strong>Use when:</strong> the task requires your expertise and review at each stage.</p>
 
-<h3>Layer 2: Chat Interfaces</h3>
-<ul>
-<li><strong>Claude.ai</strong> — Projects feature gives persistent memory across conversations. Best for complex work.</li>
-<li><strong>ChatGPT</strong> — Most popular. DALL-E, Code Interpreter, browsing built in.</li>
-<li><strong>Perplexity</strong> — AI search with citations. Best for research and staying current.</li>
-</ul>
+<h3>Layer 2: Agents (Semi-autonomous)</h3>
+<p>You give a goal. The agent plans, uses tools, takes actions, and returns a result. You review the output, not every step. Claude Code, the Codex app, and desktop agents like Claude Dispatch work this way.</p>
+<p><strong>Use when:</strong> the task has clear success criteria and you trust the agent's execution.</p>
 
-<h3>Layer 3: Building Tools</h3>
-<ul>
-<li><strong>Claude Code</strong> — Terminal-based coding agent. Best deep reasoning on hard problems. (Full module dedicated to this.)</li>
-<li><strong>Cursor</strong> — VS Code fork. $2B ARR in 2026. Best daily coding IDE.</li>
-<li><strong>Bolt.new / Lovable</strong> — Natural language to full-stack apps. Best for non-developers.</li>
-<li><strong>Replit Agent 4</strong> — Browser-based, build and deploy in one place.</li>
-</ul>
+<h3>Layer 3: Automations (Fully automatic)</h3>
+<p>A trigger fires, a workflow runs, an output is produced — without you being present. Make, n8n, and Zapier handle this layer. These run on a schedule or in response to events (new email, new form submission, new calendar event).</p>
+<p><strong>Use when:</strong> the task is recurring, predictable, and can run without human review every time.</p>
 
-<h3>Layer 4: Automation</h3>
-<ul>
-<li><strong>Make</strong> — Most powerful no-code automation. Native Claude integration.</li>
-<li><strong>n8n</strong> — Open source. Self-host for zero per-task costs at scale.</li>
-<li><strong>Zapier</strong> — 6,000+ integrations. Most beginner-friendly.</li>
-</ul>
+<div class="bg-green-900/30 p-4 rounded-lg mt-6">
+<h4>💡 The Income Principle</h4>
+<p>Chat generates your first revenue. Agents make you faster. Automations make you scalable. Most people stop at chat. The income ceiling rises dramatically when you reach automation.</p>
+</div>
 
-<h3>Layer 5: Desktop Agents</h3>
-<ul>
-<li><strong>Claude Cowork Dispatch</strong> — Persistent desktop agent. Control from your phone. 38+ connectors. Max plan.</li>
-<li><strong>OpenClaw</strong> — Open source, 247,000 GitHub stars. Model-agnostic. Control via Telegram/WhatsApp/Discord.</li>
-</ul>`
+<h3>MCP — The Protocol That Connects Everything</h3>
+<p>Model Context Protocol (MCP) is how AI models connect to external tools and data in 2027. Think of it as USB-C for AI — a standard connector that lets any compatible model use any compatible tool. If you're building AI services for clients, you'll encounter MCP when connecting Claude to databases, CRMs, or internal systems.</p>`
       },
       {
         id: 4,
-        title: "Understanding Tokens, APIs and Costs",
-        description: "How AI pricing works and how to build profitable services without surprise bills",
-        duration: "12 min",
-        content: `<h2>The Economics of AI</h2>
-<p>AI isn't free. Understanding the cost structure helps you build profitable services and avoid surprise bills that kill your margins.</p>
+        title: "Your Reusable Skills and SOPs",
+        description: "Building AI instructions that work every time without re-explaining yourself",
+        duration: "20 min",
+        content: `<h2>Stop Explaining Yourself Every Session</h2>
+<p>The biggest time waster in AI work is re-briefing the model every time. In 2027, the solution is reusable skills and SOPs — structured instruction sets that travel with you.</p>
 
-<h3>What Are Tokens?</h3>
-<ul>
-<li>1 token ≈ 4 characters or ¾ of a word</li>
-<li>1,000 tokens ≈ 750 words</li>
-<li>A typical blog post: 1,000–2,000 tokens</li>
-<li>Claude Sonnet 4.6 handles up to 200,000 tokens — roughly a full novel — in one context window</li>
-</ul>
+<h3>Claude Projects: Your Persistent Context Layer</h3>
+<p>Each Claude Project has its own instructions, uploaded files, and conversation memory. Here is how to set up a project for a client or income stream:</p>
+<ol>
+<li>Go to claude.ai → New Project</li>
+<li>Name it after the client or use case</li>
+<li>Write a Project Instructions document covering: who you are, what the client does, their brand voice, their audience, any rules and constraints</li>
+<li>Upload relevant files: past outputs, brand guidelines, product info</li>
+</ol>
+<p>Every conversation in that project inherits this context automatically.</p>
 
-<h3>API Pricing (May 2026)</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Model</th><th class="pb-2">Input</th><th class="pb-2">Output</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Claude Sonnet 4.6</td><td>$3/1M tokens</td><td>$15/1M tokens</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Claude Opus 4.6</td><td>$15/1M tokens</td><td>$75/1M tokens</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">GPT-4.5</td><td>$2.50/1M tokens</td><td>$10/1M tokens</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Gemini 3.1 Pro</td><td>Free (personal)</td><td>Free (personal)</td></tr>
-<tr><td class="py-2">Local (Ollama)</td><td>$0</td><td>$0</td></tr>
-</table>
+<h3>CLAUDE.md for Coding Projects</h3>
+<p>For Claude Code, a CLAUDE.md file in your project root acts like a permanent briefing document. Claude Code reads it at the start of every session:</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+# Project: [Name]
+## Stack
+- Next.js 14, TypeScript, Tailwind
+- Prisma + PostgreSQL
+- Stripe for payments
 
-<h3>Cost Optimisation Tips</h3>
-<ul>
-<li>Use cheaper models (Haiku, Flash) for simple tasks — save powerful models for hard reasoning</li>
-<li>Cache common system prompts — don't repeat them every API call</li>
-<li>Set token limits in your prompts to prevent runaway responses</li>
-<li>Self-host n8n to eliminate per-task automation costs at scale</li>
-</ul>
+## Rules
+- Never break existing auth
+- All API routes need force-dynamic
+- Always test before marking done
 
-<div class="bg-yellow-900/30 p-4 rounded-lg mt-6">
-<h4>⚠️ When Selling AI Services</h4>
-<p>Factor in 3–5x your actual API costs for margin, unexpected spikes, and failed runs. A workflow costing you £2 in API calls should deliver £10+ in value to the client.</p>
-</div>`
+## Key files
+- lib/course-config.ts — central config
+- app/api/ — all API routes
+</pre>
+
+<h3>SOPs for Recurring Tasks</h3>
+<p>Write a short SOP (Standard Operating Procedure) for every task you do more than three times. Format:</p>
+<ol>
+<li>Task name</li>
+<li>Trigger (what starts this task)</li>
+<li>Exact prompt template with [PLACEHOLDERS]</li>
+<li>Output format expected</li>
+<li>Quality check criteria</li>
+</ol>
+<p>Store these in a Notion database or Google Doc. When you run an automation, the SOP becomes the Claude prompt template in Make or n8n.</p>`
       },
       {
         id: 5,
-        title: "Choosing the Right Tool",
-        description: "A decision framework for tool selection so you stop wasting money and time",
-        duration: "10 min",
-        content: `<h2>Stop Collecting Tools. Start Mastering Them.</h2>
-<p>With hundreds of AI tools available, choosing the right one is a genuine skill. Here's the framework — and how to avoid the trap of collecting tools without actually using them.</p>
+        title: "Controlling Costs and Avoiding Subscription Creep",
+        description: "Build a lean stack that scales without bleeding money",
+        duration: "12 min",
+        content: `<h2>The Tool Budget That Makes Sense</h2>
+<p>The average person serious about AI income pays £80–200/month in tool subscriptions. Much of that is waste. Here is how to audit and fix it.</p>
 
-<h3>The 2026 Decision Matrix</h3>
+<h3>API Pricing (Q4 2026)</h3>
 <table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Task</th><th class="pb-2">Best Tool</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Long-form writing, complex analysis</td><td>Claude Sonnet 4.6</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Research with citations</td><td>Perplexity</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Image generation (artistic)</td><td>Midjourney v7</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Images with readable text</td><td>Ideogram 3</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Video generation</td><td>Runway Gen-3 or Kling 2.0</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Coding (IDE experience)</td><td>Cursor or Windsurf</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Coding (terminal/deep reasoning)</td><td>Claude Code</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Build an app without coding</td><td>Bolt.new or Lovable</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Automation workflows</td><td>Make, n8n, or Zapier</td></tr>
-<tr><td class="py-2">Desktop agent</td><td>Claude Dispatch or OpenClaw</td></tr>
+<tr class="border-b border-gray-700"><th class="pb-2">Model</th><th class="pb-2">Input</th><th class="pb-2">Output</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Claude Sonnet 5</td><td>$3/1M tokens</td><td>$15/1M tokens</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Claude Fable 5.1</td><td>$15/1M tokens</td><td>$75/1M tokens</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">GPT-6</td><td>$4/1M tokens</td><td>$16/1M tokens</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Gemini 3.8 Pro</td><td>Free (personal)</td><td>Free (personal)</td></tr>
+<tr><td class="py-2">Local (Ollama)</td><td>£0</td><td>£0</td></tr>
 </table>
 
-<h3>The Minimum Viable Toolstack</h3>
+<h3>The Minimum Viable Stack (£30–40/month)</h3>
 <ul>
-<li><strong>Claude Pro</strong> ($20/month) — your primary AI brain</li>
-<li><strong>Midjourney Basic</strong> ($10/month) — images</li>
-<li><strong>Make free tier</strong> — automation</li>
-<li><strong>Canva free tier</strong> — design</li>
-</ul>
-<p class="mt-4">Total: ~£25–30/month. You can generate thousands per month from this stack alone. Don't overcomplicate it.</p>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 Action Step: The 20-Minute Tool Audit</h4>
-<ol class="mt-2 space-y-2">
-<li>List every AI tool you pay for in a spreadsheet</li>
-<li>For each: write its single most important use case in one sentence. Can't? Cut it.</li>
-<li>If you didn't use it in the last 7 days — cut list</li>
-<li>Set a tool freeze: no new subscriptions for 30 days until you master what you have</li>
-</ol>
-</div>`
-      },
-      {
-        id: 6,
-        title: "Ethics and Legal Considerations",
-        description: "Staying on the right side of the law when building an AI business in 2026",
-        duration: "15 min",
-        content: `<h2>Building Sustainably</h2>
-<p>Moving fast is great. Moving fast legally is better. Here's what you need to know in 2026.</p>
-
-<h3>Copyright and Content Ownership</h3>
-<ul>
-<li><strong>AI-generated content:</strong> Generally not copyrightable without substantial human creative input</li>
-<li><strong>Your prompts:</strong> You retain rights to your creative inputs</li>
-<li><strong>Training data lawsuits:</strong> Several major cases ongoing in 2026 — the landscape is still evolving</li>
+<li><strong>Claude Pro ($20/month):</strong> your primary reasoning and writing tool</li>
+<li><strong>Perplexity free tier:</strong> research and fact-checking</li>
+<li><strong>Make free tier:</strong> first automations (1,000 ops/month)</li>
+<li><strong>Canva free tier:</strong> visuals and design</li>
+<li><strong>Ollama (free):</strong> local models for privacy-sensitive tasks</li>
 </ul>
 
-<h3>Disclosure Requirements</h3>
-<ul>
-<li>FTC requires disclosure of AI-generated content in advertising</li>
-<li>EU AI Act (fully in force from 2025) requires transparency about AI in high-risk applications</li>
-<li>Many platforms require AI content labels — check each platform's policy</li>
-</ul>
-
-<h3>Data Privacy</h3>
-<ul>
-<li>Don't feed client personal data into public AI tools without consent and a Data Processing Agreement</li>
-<li>GDPR applies to any EU personal data</li>
-<li>Claude Dispatch and OpenClaw run locally — files never leave your machine (key selling point for sensitive client work)</li>
-</ul>
-
-<h3>Best Practices</h3>
+<h3>The 20-Minute Tool Audit</h3>
 <ol>
-<li>Be transparent with clients about AI usage — it builds trust, not suspicion</li>
-<li>Keep humans in the loop for decisions with real consequences</li>
-<li>Review and edit AI outputs before delivery — you are responsible for what you deliver</li>
-<li>Include AI usage disclosure in your client contracts</li>
-</ol>`
+<li>List every AI subscription in a spreadsheet with monthly cost</li>
+<li>For each tool, write its single most important use case in one sentence. Can't? Cancel it.</li>
+<li>Did you use it in the last 7 days? No? Cancel it.</li>
+<li>Do two tools do the same thing? Keep the better one.</li>
+<li>Set a tool freeze: no new subscriptions for 30 days</li>
+</ol>
+
+<div class="bg-yellow-900/30 p-4 rounded-lg mt-6">
+<h4>⚠️ When Selling AI Services</h4>
+<p>Factor in 3–5× your API costs for margin, failures, and overruns. A workflow costing you $2 in API calls should deliver $10+ in value to the client.</p>
+</div>`
       }
     ]
   },
   {
     id: 2,
-    title: "The AI Money Stack",
-    description: "The complete ecosystem of tools used to generate income in 2026 — all current, all practical.",
-    outcome: "Students assemble a money stack of tools they can immediately combine to build products and services.",
+    title: "AI Content and Video",
+    description: "Build an AI-assisted content operation — channels, short-form, affiliate income — without showing your face if you don't want to.",
+    outcome: "Students have a working 7-day content pipeline and their first published piece.",
     icon: "Layers",
     lessons: [
       {
         id: 1,
-        title: "Text and Reasoning Models",
-        description: "Claude, ChatGPT, Gemini — when to use which and why it matters",
+        title: "Finding Topics With Real Demand",
+        description: "Research that leads to views — not guesses",
         duration: "20 min",
-        content: `<h2>Your Primary Content Engine</h2>
-<p>Text and reasoning models are the foundation of everything. In 2026 the models have converged in capability, but knowing which to reach for and when is a genuine competitive edge.</p>
+        content: `<h2>The Right Topic Before the Right Script</h2>
+<p>Most AI content fails not because of the writing quality but because nobody was searching for it. Topic research is the highest-leverage step in content creation.</p>
 
-<h3>Claude (Anthropic) — The Reasoning Champion</h3>
+<h3>The Research Stack (2027)</h3>
 <ul>
-<li><strong>Sonnet 4.6:</strong> Sweet spot of capability and cost. Best for most tasks.</li>
-<li><strong>Opus 4.6:</strong> Maximum capability for the hardest problems.</li>
-<li><strong>Projects feature:</strong> Persistent memory and instructions across all conversations — invaluable for ongoing client work.</li>
-<li><strong>Pricing:</strong> Free tier, Pro $20/month, Max $100–200/month (includes Dispatch)</li>
+<li><strong>YouTube search autocomplete:</strong> type your topic and watch what YouTube suggests — these are real searches</li>
+<li><strong>VidIQ or TubeBuddy:</strong> shows search volume and competition for YouTube keywords</li>
+<li><strong>Perplexity:</strong> "What are people asking about [topic] right now?" — pulls from real forums and recent content</li>
+<li><strong>Answer the Public:</strong> maps all the question variants around a keyword</li>
+<li><strong>Reddit and Quora:</strong> real people, real pain points, real language to use in your scripts</li>
 </ul>
 
-<h3>ChatGPT / GPT-4.5 (OpenAI)</h3>
-<ul>
-<li><strong>Best for:</strong> General tasks, DALL-E image generation, Code Interpreter data analysis</li>
-<li><strong>o3 model:</strong> Exceptional for multi-step reasoning and hard coding problems</li>
-<li><strong>Pricing:</strong> Free tier, Plus $20/month</li>
-</ul>
+<h3>The Winning Topic Formula</h3>
+<p>Look for the overlap between three things:</p>
+<ol>
+<li><strong>High search demand:</strong> people are actively looking for this</li>
+<li><strong>Low quality competition:</strong> the existing content is weak, outdated, or misses the point</li>
+<li><strong>Monetisable audience:</strong> the viewer has a problem worth solving and the means to pay for a solution</li>
+</ol>
 
-<h3>Gemini 3.1 Pro (Google)</h3>
-<ul>
-<li><strong>Best for:</strong> Google Workspace integration, free high-capability access via Gemini CLI</li>
-<li><strong>Gemini CLI:</strong> Free Gemini 3.1 Pro in your terminal — most accessible free model in 2026</li>
-<li><strong>Pricing:</strong> Free personal, Advanced $19.99/month</li>
-</ul>
-
-<h3>Perplexity — AI Search</h3>
-<ul>
-<li><strong>Best for:</strong> Research with citations, fact-checking, staying current with fast-moving topics</li>
-<li><strong>Not a replacement for Claude/ChatGPT</strong> — it's a research tool, not a writing/reasoning tool</li>
-<li><strong>Pricing:</strong> Free tier, Pro $20/month</li>
-</ul>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 Recommended Starting Stack</h4>
-<p>Claude Pro + Perplexity Pro covers 90% of use cases for £35–40/month. Start here before adding anything else.</p>
+<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
+<h4>📋 Action: Your First 10 Topic Candidates</h4>
+<ol class="mt-2 space-y-2">
+<li>Go to YouTube and search your broad topic — note the autocomplete suggestions</li>
+<li>Sort results by "This month" and look for videos under 50K views that have strong engagement</li>
+<li>Open Perplexity: "What questions are beginners asking about [topic] in 2027?"</li>
+<li>Go to Reddit.com/r/[your niche] and sort by "Hot" — read the titles and note recurring themes</li>
+<li>Build a shortlist of 10 topics. Rank them by: demand × ease of production</li>
+</ol>
 </div>`
       },
       {
         id: 2,
-        title: "Image and Design Tools",
-        description: "Midjourney v7, Ideogram 3, Flux, and Canva AI — creating visuals at scale",
-        duration: "25 min",
-        content: `<h2>Visual Content at Scale</h2>
-<p>Professional designers charge £500+ for brand assets. With AI, you can create stunning visuals in minutes and sell that speed as a premium service.</p>
+        title: "Scripting With AI — Three Frameworks",
+        description: "The script structures that drive views and watch time",
+        duration: "22 min",
+        content: `<h2>AI Makes Writing Faster. Structure Makes It Work.</h2>
+<p>A well-structured script is the single biggest driver of watch time. Here are three frameworks, each suited to a different type of content.</p>
 
-<h3>Midjourney v7 — The Gold Standard</h3>
-<ul>
-<li><strong>Best for:</strong> Marketing visuals, brand imagery, lifestyle photography, creative concepts</li>
-<li><strong>v7 improvements:</strong> Better realism, improved consistency, web interface (no Discord required)</li>
-<li><strong>Style Reference (--sref):</strong> Lock in a visual style across all images — essential for brand work</li>
-<li><strong>Pricing:</strong> $10–60/month at midjourney.com</li>
-</ul>
+<h3>Framework 1: The Problem-Solution Arc</h3>
+<p>Best for: tutorial content, how-to guides, explainers</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Hook (0:00–0:20): State the specific problem and who has it
+Agitation (0:20–1:00): Why does it matter? What's at stake?
+Setup (1:00–2:00): Quick credibility and what you'll cover
+Solution (2:00–8:00): Step-by-step, screen-record heavy
+Payoff (8:00–9:00): Result + what to do next
+CTA (9:00–9:20): Subscribe / related video / product link
+</pre>
 
-<h3>Ideogram 3 — Best for Text in Images</h3>
-<ul>
-<li><strong>Best for:</strong> Thumbnails with text, posters, social graphics, logo concepts</li>
-<li><strong>Key advantage:</strong> While Midjourney struggles with readable text in images, Ideogram handles it perfectly</li>
-<li><strong>Pricing:</strong> Free tier, Plus $8/month</li>
-</ul>
+<h3>Framework 2: The Comparison Frame</h3>
+<p>Best for: tool comparisons, product reviews, "which is better" content</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Hook: Bold claim that one option wins, or that the answer is surprising
+Setup: What are we comparing and why does it matter?
+Option A: Genuine strengths and real limitations
+Option B: Genuine strengths and real limitations
+Head-to-head: Same task, both options, real result
+Verdict: Clear recommendation with conditions
+</pre>
 
-<h3>Flux (Black Forest Labs) — Open Source Powerhouse</h3>
-<ul>
-<li><strong>Best for:</strong> Product photography, portraits, photorealistic scenes</li>
-<li><strong>Key advantage:</strong> Open source — run via API (fal.ai, Replicate) or self-host</li>
-<li><strong>Pricing:</strong> ~$0.003–0.05 per image via API</li>
-</ul>
+<h3>Framework 3: The Revelation Arc</h3>
+<p>Best for: opinion content, trend analysis, "what's actually happening" videos</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Hook: Challenge a widespread assumption
+Evidence: Show why the assumption is wrong or incomplete
+The real picture: What's actually happening
+Implications: What this means for the viewer
+Action: What they should do differently
+</pre>
 
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 How To: Create a Client Brand Visual Pack in 1 Hour</h4>
-<ol class="mt-2 space-y-2">
-<li>Subscribe to Midjourney Basic ($10/month)</li>
-<li>Hero image: "Professional [industry] setting, clean modern aesthetic, [brand colour] accents, photorealistic --ar 16:9 --v 7"</li>
-<li>Once you like one image, use --sref [image URL] on all future generations to lock in the style</li>
-<li>Social squares: add --ar 1:1 | LinkedIn banners: --ar 8:1</li>
-<li>For graphics needing readable text, switch to ideogram.ai</li>
-<li>Bring everything into Canva, add client logo and text overlays, deliver as shared Canva folder</li>
-</ol>
-</div>
-
-<h3>Revenue Opportunities</h3>
-<ul>
-<li>Social media graphics packages — £200–500/month retainer</li>
-<li>Product mockups for e-commerce sellers — £50–200 per set</li>
-<li>YouTube thumbnail packs — £100–300</li>
-<li>Brand visual identity kits — £300–800</li>
-</ul>`
+<h3>Claude Prompt for a Full Script</h3>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+You are writing a YouTube script for the AI Money Maniac channel.
+Topic: [TOPIC]
+Framework: [CHOOSE ONE ABOVE]
+Target length: 9–12 minutes (approx 1,400–1,800 words spoken)
+Tone: Direct, practical, no hype. The host has done the work.
+Audience: People trying to build income with AI — beginners to intermediate.
+Include: Screen-record cues in [brackets], natural pauses marked with [BEAT].
+Do not include: Generic AI disclaimers, excessive throat-clearing in the intro.
+Output: Full script, ready to read.
+</pre>`
       },
       {
         id: 3,
-        title: "Video Creation Tools",
-        description: "Runway Gen-3, Kling 2.0, Pika 2.0, and HeyGen — video without cameras",
-        duration: "22 min",
-        content: `<h2>Video Without Cameras</h2>
-<p>AI video quality has leaped dramatically in 2026. Short clips generated today are often indistinguishable from real footage at first glance.</p>
+        title: "AI Video and Avatar Tools in 2027",
+        description: "What's actually worth using for faceless and hybrid content",
+        duration: "20 min",
+        content: `<h2>The Video Stack That's Worth Paying For</h2>
+<p>AI video quality crossed a threshold in late 2026. Clips generated today are frequently indistinguishable from real footage for B-roll purposes. Here is what actually matters for content creators.</p>
 
-<h3>Runway Gen-3 Alpha — Cinematic Quality</h3>
+<h3>For Faceless Channels</h3>
 <ul>
-<li><strong>Best for:</strong> High-quality b-roll, creative ad visuals, short clips</li>
-<li><strong>Features:</strong> Text-to-video, image-to-video, camera motion controls</li>
-<li><strong>Pricing:</strong> From $15/month at runwayml.com</li>
+<li><strong>HeyGen:</strong> AI avatar with your cloned voice. Record yourself once, then create videos in minutes from a script. Best for talking-head educational content. ($29/month)</li>
+<li><strong>Synthesia:</strong> Enterprise-grade, very polished avatars. Used by brands and corporates. Best if you're selling video production as a service. ($22/month)</li>
+<li><strong>Runway Gen-3:</strong> Best cinematic quality for b-roll and creative clips. Text-to-video and image-to-video. ($15/month)</li>
+<li><strong>Kling 2.0:</strong> Strong human motion, realistic lifestyle footage. Free credits daily. ($8/month Pro)</li>
 </ul>
 
-<h3>Kling 2.0 — Best Human Motion</h3>
+<h3>For Hybrid (Your Face + AI B-roll)</h3>
 <ul>
-<li><strong>Best for:</strong> Realistic human movement, product demos, lifestyle content</li>
-<li><strong>Pricing:</strong> Free credits daily, Pro $8/month at klingai.com</li>
+<li>Record yourself on a phone or webcam — quality matters less than content quality</li>
+<li>Use Runway or Kling to generate b-roll for the visual breaks</li>
+<li>Use Ideogram 3 for any on-screen graphics needing readable text</li>
+<li>Edit in CapCut (free) or DaVinci Resolve (free)</li>
 </ul>
 
-<h3>Pika 2.0 — Fast Social Content</h3>
-<ul>
-<li><strong>Best for:</strong> Quick social media clips, fast iterations, short-form content</li>
-<li><strong>Pricing:</strong> Free tier, Basic $8/month</li>
-</ul>
+<div class="bg-yellow-900/30 p-4 rounded-lg mt-6">
+<h4>⚠️ Disclosure Required</h4>
+<p>Any AI-generated avatar or voice clone used in content must be disclosed. Most platforms now require this. Include a brief disclosure in your video description and verbally where appropriate. This is both a legal requirement in many jurisdictions and the right thing to do.</p>
+</div>
 
-<h3>HeyGen — AI Avatars and Translation</h3>
+<h3>For Short-Form Content</h3>
 <ul>
-<li><strong>Best for:</strong> Talking-head videos at scale, video translation into 40+ languages</li>
-<li><strong>Killer feature:</strong> Clone your own voice and likeness — create a 5-minute video from a script in minutes</li>
-<li><strong>Pricing:</strong> From $29/month</li>
-</ul>
-
-<h3>Revenue Opportunities</h3>
-<ul>
-<li>Social media video packages — £500–1,500/month retainer</li>
-<li>AI avatar explainer videos — £300–800 each</li>
-<li>Video translation services using HeyGen — £200–500 per video</li>
-<li>YouTube short-form content production — £200–600/month</li>
+<li><strong>Pika 2.0:</strong> Fastest turnaround for short clips ($8/month)</li>
+<li><strong>CapCut AI:</strong> Auto-captions, auto-reframe for different aspect ratios — essential for repurposing</li>
+<li>One long-form video can produce 5–8 Shorts/Reels with 30 minutes of editing</li>
 </ul>`
       },
       {
         id: 4,
-        title: "AI Coding Tools",
-        description: "Cursor, Claude Code, Bolt.new, Replit Agent 4 — the full 2026 landscape",
-        duration: "20 min",
-        content: `<h2>Build Software Without Being a Developer</h2>
-<p>AI coding tools have democratised software development. You can build functional apps with minimal technical background. Module 6 covers Claude Code in full depth — this lesson covers the complete landscape.</p>
-
-<h3>Cursor — The Daily Coding IDE</h3>
-<ul>
-<li><strong>Best for:</strong> Daily coding, rapid prototyping, non-developers wanting to build real things</li>
-<li><strong>Market signal:</strong> $2 billion ARR in February 2026. Widely trusted by professional developers.</li>
-<li><strong>Pricing:</strong> Free tier, Pro $20/month</li>
-</ul>
-
-<h3>Bolt.new / Lovable — Vibe Coding Platforms</h3>
-<ul>
-<li><strong>Best for:</strong> Non-developers who want to build full apps by describing them in plain English</li>
-<li><strong>How it works:</strong> Describe your app → AI generates complete working code → one-click deploy</li>
-<li><strong>Pricing:</strong> Free tiers, paid from $20/month</li>
-</ul>
-
-<h3>Replit Agent 4 — Browser-Based Building</h3>
-<ul>
-<li><strong>Best for:</strong> No-install builds, quick prototypes, deploying immediately</li>
-<li><strong>March 2026:</strong> Agent 4 with parallel task forking. Raised $400M at $9B valuation.</li>
-<li><strong>Pricing:</strong> Free tier, Core $25/month</li>
-</ul>
-
-<h3>Codex (OpenAI) — Cloud Parallel Agents</h3>
-<ul>
-<li><strong>Best for:</strong> Running multiple coding tasks simultaneously in cloud sandboxes</li>
-<li><strong>Advantage:</strong> Direct GitHub integration — reads PRs, issues, and repo history before starting</li>
-<li><strong>Pricing:</strong> Included with ChatGPT Plus/Pro</li>
-</ul>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 How To: Build and Deploy a Tool in 2 Hours (No Experience Needed)</h4>
-<ol class="mt-2 space-y-2">
-<li>Go to bolt.new</li>
-<li>Type: "Build a word count tool with reading time estimate. Clean dark theme. Single page."</li>
-<li>Bolt generates the full app. Preview it live.</li>
-<li>Click Deploy — live URL in 30 seconds</li>
-<li>Share the URL as a free tool or portfolio piece</li>
-</ol>
-</div>`
-      },
-      {
-        id: 5,
-        title: "Automation Tools",
-        description: "Make, n8n, and Zapier — connecting AI to real-world workflows",
+        title: "The 7-Day Content Pipeline",
+        description: "Build once — produce consistently, every week, without burning out",
         duration: "25 min",
-        content: `<h2>The Glue That Holds Everything Together</h2>
-<p>Automation tools turn individual AI capabilities into complete systems that run 24/7. This is where real passive income becomes possible — build once, run forever.</p>
+        content: `<h2>From Random Posting to Consistent System</h2>
+<p>Consistency beats quality in the early stages of a channel. A system that produces good-enough content every week beats occasional great content with long gaps.</p>
 
-<h3>Make — The Most Powerful</h3>
+<h3>The Weekly Pipeline</h3>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Monday — Research (45 min)
+→ Perplexity: recent developments in your niche
+→ Pick topic from your backlog (built in Notion or Sheets)
+→ Claude: generate outline
+
+Tuesday — Script (30 min)
+→ Claude writes full script from outline
+→ You read, edit, and add your voice
+→ Flag any screen-record sections
+
+Wednesday — Production (60–90 min)
+→ Record screen sections
+→ Record talking head (if applicable)
+→ Generate b-roll via Runway or Kling for visual breaks
+
+Thursday — Edit (60 min)
+→ CapCut or DaVinci Resolve
+→ Add captions (CapCut auto-captions)
+→ Add music (Artlist or Epidemic Sound)
+
+Friday — Publish and Repurpose (30 min)
+→ Upload to YouTube with Claude-written description, tags and chapters
+→ Clip 3 Shorts/Reels from the video
+→ Claude writes LinkedIn post + 3 tweets from the script
+→ Schedule via Buffer
+</pre>
+
+<h3>The Make Automation Layer</h3>
+<p>Once the pipeline is working manually, automate the distribution layer in Make:</p>
 <ul>
-<li><strong>Strengths:</strong> Complex logic, data manipulation, error handling, thousands of connections, native Claude module</li>
-<li><strong>Best for:</strong> Advanced client automations, multi-step AI workflows, anything with conditional logic</li>
-<li><strong>Pricing:</strong> Free tier (1,000 ops/month), paid from $9/month</li>
+<li>Trigger: new YouTube video published (YouTube webhook)</li>
+<li>Claude: extract key points and write LinkedIn post, Twitter thread, newsletter snippet</li>
+<li>Buffer: schedule each piece for optimal posting times</li>
+<li>Google Sheets: log video slug, title, and performance metrics</li>
 </ul>
 
-<h3>n8n — Open Source Self-Hosted</h3>
-<ul>
-<li><strong>Key advantage:</strong> Self-host on a £5/month VPS — no per-task costs at any scale</li>
-<li><strong>Best for:</strong> High-volume automations, privacy-sensitive data, replacing expensive Zapier plans</li>
-<li><strong>Pricing:</strong> Free self-hosted, Cloud from $20/month</li>
-</ul>
-
-<h3>Zapier — Most Beginner Friendly</h3>
-<ul>
-<li><strong>Strengths:</strong> 6,000+ integrations, very easy setup, excellent documentation</li>
-<li><strong>Best for:</strong> Simple automations, quick wins, non-technical clients</li>
-<li><strong>Pricing:</strong> Free tier (100 tasks/month), paid from $19.99/month</li>
-</ul>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Your First Make Automation (30 min)</h4>
-<ol class="mt-2 space-y-2">
-<li>make.com → Create account → New scenario</li>
-<li>Trigger: Gmail → "Watch Emails" with label filter "Leads"</li>
-<li>Module: "Anthropic Claude" → prompt: "Summarise this email in 3 bullet points and classify as Lead/Support/Other: [email body]"</li>
-<li>Output: Google Sheets → "Add a Row" with email subject, sender, AI summary</li>
-<li>Run once to test, then schedule every 15 minutes</li>
-</ol>
-</div>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 Selling Automations</h4>
-<p>Charge £500–2,000 setup + £200–500/month management. Your actual cost: a few hours setup + Make subscription. Margin: 80%+.</p>
-</div>`
-      },
-      {
-        id: 6,
-        title: "No-Code and Vibe Coding Platforms",
-        description: "Bolt.new, Lovable, v0, and Bubble — building apps without writing code",
-        duration: "20 min",
-        content: `<h2>Build Apps in Hours, Not Months</h2>
-<p>Vibe coding — describing what you want in plain English and having AI build it — went mainstream in 2025–2026. These platforms make app building genuinely accessible to anyone.</p>
-
-<h3>Bolt.new — Fastest Full-Stack Builder</h3>
-<ul>
-<li>Describe your app → get complete working frontend + backend</li>
-<li>One-click deploy to production</li>
-<li><strong>Best for:</strong> Quick MVPs, client prototypes, landing pages with functionality</li>
-<li><strong>Pricing:</strong> Free tier, Pro $20/month</li>
-</ul>
-
-<h3>Lovable — Best UI Quality</h3>
-<ul>
-<li>Particularly strong on design quality and visual polish</li>
-<li>Native Supabase (database + auth) integration built in</li>
-<li><strong>Best for:</strong> Apps that need to look professional immediately</li>
-<li><strong>Pricing:</strong> Free tier, Starter $20/month</li>
-</ul>
-
-<h3>v0 by Vercel — UI Component Generator</h3>
-<ul>
-<li>Text-to-UI that produces clean React/Next.js code</li>
-<li><strong>Best for:</strong> Adding polished UI components to existing projects</li>
-<li><strong>Pricing:</strong> Free tier, Pro $20/month</li>
-</ul>
-
-<h3>Bubble — Complex No-Code Apps</h3>
-<ul>
-<li>Full visual programming — database, workflows, logic, no code required</li>
-<li><strong>Best for:</strong> Marketplaces, SaaS with complex logic, client-facing portals</li>
-<li><strong>Pricing:</strong> Free tier, paid from $29/month</li>
-</ul>
-
-<h3>Money-Making Ideas</h3>
-<ul>
-<li>Build client MVPs for validation — £500–2,000</li>
-<li>Create niche micro-tools and sell as SaaS</li>
-<li>Offer rapid prototyping services — £300–1,000</li>
-<li>Internal tools for SMEs — £1,000–5,000</li>
-</ul>`
+<h3>Monetisation Paths for Content</h3>
+<table class="w-full text-left mt-4">
+<tr class="border-b border-gray-700"><th class="pb-2">Source</th><th class="pb-2">When It Kicks In</th><th class="pb-2">Typical Range</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">YouTube AdSense</td><td>1K subs + 4K hours</td><td>£2–8 per 1K views</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Affiliate links</td><td>Day 1</td><td>20–40% recurring</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Sponsorships</td><td>~5K subs</td><td>£50–500 per 1K views</td></tr>
+<tr><td class="py-2">Own products</td><td>Day 1 (with audience)</td><td>Unlimited</td></tr>
+</table>`
       }
     ]
   },
   {
     id: 3,
     title: "AI Service Businesses",
-    description: "How to generate real income immediately by selling AI-powered services to businesses.",
-    outcome: "Students launch a simple AI service offer and land their first paying client.",
+    description: "Build and sell AI-powered services to businesses — websites, content, automations, chatbots, lead generation.",
+    outcome: "Students have one packaged, demonstrable, sellable service and their outreach underway.",
     icon: "Briefcase",
     lessons: [
       {
         id: 1,
-        title: "AI Website Creation for Businesses",
-        description: "Build and sell websites to local businesses using AI — the fastest path to £1,000",
-        duration: "30 min",
-        content: `<h2>The Fastest Path to Your First £1,000</h2>
-<p>Local businesses need websites. They don't care how you build them — they care about results. AI gives you a massive speed advantage over traditional web designers.</p>
+        title: "Ten AI Services Businesses Actually Buy",
+        description: "What sells, what pricing works, and how to pick your first one",
+        duration: "20 min",
+        content: `<h2>Start Where the Money Already Is</h2>
+<p>The mistake most people make is inventing an AI service and then looking for clients. Go the other way — find where businesses are already spending money and offer an AI-powered version of that.</p>
 
-<h3>The Service Package</h3>
+<h3>The Ten Services (with Real Price Ranges)</h3>
+<ol>
+<li><strong>Website design and copy (AI-assisted):</strong> £1,200–3,500 per site. Fast turnaround is your edge over traditional agencies.</li>
+<li><strong>AI chatbot setup and training:</strong> £400–2,000 setup + £80–200/month management. Chatbase, Voiceflow or custom API builds.</li>
+<li><strong>SEO content writing:</strong> £80–250 per article. Use AI for research and draft; human editing for quality and accuracy.</li>
+<li><strong>Social media content packages:</strong> £400–1,200/month. 30 posts, captions, hashtags, scheduling.</li>
+<li><strong>Email sequence writing:</strong> £300–800 per sequence. Onboarding, nurture, sales.</li>
+<li><strong>AI outbound lead generation:</strong> £2,000–4,000 setup + £1,000–2,500/month management.</li>
+<li><strong>Make/n8n automation builds:</strong> £500–3,000 per workflow + £200–500/month maintenance.</li>
+<li><strong>AI video production:</strong> £300–1,000 per video. HeyGen avatars, Runway b-roll, scripted by Claude.</li>
+<li><strong>Business intelligence reports:</strong> £500–2,000 per report. Competitor analysis, market research, automated weekly briefings.</li>
+<li><strong>AI consulting and training:</strong> £800–2,000 per day. Help businesses figure out where AI applies in their operations.</li>
+</ol>
+
+<h3>How to Pick Your First Service</h3>
+<p>Choose based on three criteria:</p>
 <ul>
-<li>5-page business website (Home, About, Services, Gallery, Contact)</li>
-<li>Mobile responsive design</li>
-<li>Contact form with email notifications</li>
-<li>Basic SEO setup (meta titles, descriptions, Google indexing)</li>
-<li>Google Business profile optimisation</li>
-</ul>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Build Your First AI Website in 2 Hours</h4>
-<ol class="mt-2 space-y-2">
-<li>Go to framer.com and create a free account</li>
-<li>Click "Generate with AI" — describe the business clearly</li>
-<li>Open Claude: "Write website copy for a plumbing business called ABC Plumbing in [City]. Include: hero headline, About section, Services list (5 services), Contact CTA. Concise and customer-focused."</li>
-<li>Replace placeholder text with your generated copy</li>
-<li>Use Midjourney for hero image: "Professional plumber at work, modern photography --ar 16:9 --v 7"</li>
-<li>Add image, adjust colours, publish — portfolio piece done</li>
-</ol>
-</div>
-
-<h3>Pricing Strategy</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Package</th><th class="pb-2">Price</th><th class="pb-2">Your Time</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Basic (5 pages)</td><td>£1,200–1,800</td><td>2–3 days</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Standard (10 pages + blog)</td><td>£2,500–3,500</td><td>1 week</td></tr>
-<tr><td class="py-2">Premium (custom design)</td><td>£5,000+</td><td>2 weeks</td></tr>
-</table>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 Find Your First 10 Clients</h4>
-<ol class="mt-2 space-y-2">
-<li>Search Google Maps for "[trade] [your city]" — plumber, restaurant, solicitor, salon</li>
-<li>Click each listing and check if they have a website or if it looks outdated</li>
-<li>Build a list of 50 businesses with no site or a poor one</li>
-<li>Claude prompt: "Write a cold email offering professional website services to a local plumbing business. I noticed their site looks outdated. Under 80 words."</li>
-<li>Send 10/day for 5 days — expect 1–2 clients from 50 emails</li>
-</ol>
-</div>`
+<li><strong>Can you demo it in 30 minutes?</strong> If you can't show a prospect the output quickly, it's harder to sell.</li>
+<li><strong>Do you understand the buyer's world?</strong> A service for estate agents is easier to sell if you understand their pain points.</li>
+<li><strong>Can you deliver it consistently?</strong> Don't promise a service you've never actually built end-to-end.</li>
+</ul>`
       },
       {
         id: 2,
-        title: "AI Content Services",
-        description: "Blog writing, ad copy, and social media content at scale with 80%+ margins",
+        title: "Finding and Approaching Your First Clients",
+        description: "Outreach that isn't spam — practical prospecting for AI services",
         duration: "25 min",
-        content: `<h2>Unlimited Content at Scale</h2>
-<p>Businesses need constant content. AI lets you deliver volume without sacrificing quality. The gap between what clients pay and what it costs you is where your profit lives.</p>
+        content: `<h2>The Fastest Path to a Paying Client</h2>
+<p>Cold outreach done well converts 3–8%. Cold outreach done poorly converts 0.1%. The difference is specificity and proof.</p>
 
-<h3>Service Types and Pricing</h3>
+<h3>Finding Prospects</h3>
 <ul>
-<li><strong>Blog Writing:</strong> SEO-optimised articles (1,000–2,500 words) — £80–250 per article. AI time: 30–45 min.</li>
-<li><strong>Ad Copy:</strong> Google/Facebook ad sets (3–5 variations) — £150–400 per campaign</li>
-<li><strong>Social Media:</strong> 30-post monthly calendar with captions and hashtags — £400–1,200/month</li>
-<li><strong>Email Sequences:</strong> 5–7 email flows — £300–800 per sequence</li>
+<li><strong>Google Maps method:</strong> Search "[business type] [your city]". Click each listing. Check if they have a website or if it looks outdated. Build a list of 50.</li>
+<li><strong>LinkedIn method:</strong> Filter by industry, company size (10–50 employees is ideal for services), and location. Connect with decision-makers.</li>
+<li><strong>Apollo.io:</strong> Build lists by ICP (Ideal Customer Profile) — industry, company size, revenue, job title. Free plan gives 50 contacts/month.</li>
 </ul>
 
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Write an SEO Blog Post in 45 Minutes</h4>
+<h3>The Cold Email That Works</h3>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Subject: [Something specific about their business]
+
+Hi [First Name],
+
+I noticed [specific observation about their business — their 
+website, a post they made, something real].
+
+I help [business type] [specific outcome]. For example, I recently 
+[brief, specific result for a similar business].
+
+Worth a quick 15-minute call to see if I could do the same for you?
+
+[Your name]
+</pre>
+<p>Keep it under 80 words. The specificity is what makes it work. Use Claude to write personalised opening lines at scale once you have a list.</p>
+
+<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
+<h4>📋 Action: Send Your First 10 Emails This Week</h4>
 <ol class="mt-2 space-y-2">
-<li>Open Perplexity — search your topic. Read top 3 results, note what angles they cover.</li>
-<li>Claude: "Create a detailed outline for a 1,500-word post titled '[TITLE]'. Target keyword: '[KEYWORD]'. Include H1, 5 H2 sections each with 2–3 H3 sub-points, and conclusion."</li>
-<li>Review outline. Add missing angles from your Perplexity research.</li>
-<li>Claude: "Write the full post using this outline. Tone: [conversational/professional]. Open with a hook addressing the reader's pain point directly."</li>
-<li>Edit anything generic — especially the intro and conclusion.</li>
-<li>Claude: "Write an SEO meta title (max 60 chars) and meta description (max 155 chars) for this post."</li>
+<li>Build a list of 10 businesses using the Google Maps method</li>
+<li>Find each owner's email (company website, LinkedIn, or Hunter.io)</li>
+<li>Write a personalised email for each — Claude prompt: "Write a cold email under 80 words offering [service] to [business type]. Reference [specific observation]. No generic openers."</li>
+<li>Send from your personal email, not a bulk tool</li>
+<li>Follow up once at 3 days if no reply</li>
 </ol>
 </div>
 
-<h3>Building Recurring Revenue</h3>
-<ul>
-<li>4 blog posts/month: £600–800</li>
-<li>Daily social posts (30/month): £800–1,200</li>
-<li>Full content package (blogs + social + newsletter): £1,800–2,500+</li>
-</ul>
-<p class="mt-3">Land 5 retainer clients at £800/month = £4,000/month recurring. Achievable in 3–6 months from a standing start.</p>`
+<h3>Pricing Conversations</h3>
+<p>Always ask before you quote: "What would it be worth to your business if [problem] was solved?" The answer tells you what price range the client is thinking in — and often it's higher than what you were going to charge.</p>`
       },
       {
         id: 3,
-        title: "AI Chatbot and Agent Setup",
-        description: "Deploy AI chatbots for business websites — easy to sell, high ROI for clients",
-        duration: "25 min",
-        content: `<h2>24/7 Customer Service in a Day</h2>
-<p>Businesses lose leads every night when no one's answering enquiries. An AI chatbot solves this immediately — and the ROI is obvious enough that it's an easy sell.</p>
+        title: "Building Your Demo and Proposal",
+        description: "Show before you tell — the demo that closes deals",
+        duration: "22 min",
+        content: `<h2>The Demo is the Sales Process</h2>
+<p>In AI services, showing is worth ten times more than telling. Build the demo first, then find the clients for it — not the other way around.</p>
 
-<h3>Chatbot Use Cases</h3>
-<ul>
-<li>Lead qualification (capture name, email, problem, budget)</li>
-<li>FAQ handling (prices, location, hours, booking)</li>
-<li>Appointment booking via Calendly integration</li>
-<li>Product recommendations based on customer answers</li>
-<li>After-hours support — prevent lost leads overnight</li>
-</ul>
+<h3>Build a Demo Before You Have Clients</h3>
+<p>Pick a hypothetical or fictional business in your target niche and build the service for them. A demo chatbot for "Manchester Plumbing Services". An AI content calendar for "Green Earth Café". This becomes your sales tool and portfolio piece.</p>
 
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Build and Deploy a Client Chatbot in 3 Hours</h4>
-<ol class="mt-2 space-y-2">
-<li>Go to chatbase.co → "New Chatbot" → "Website" → enter client's URL (auto-crawls)</li>
-<li>Add extra knowledge: paste in FAQs, pricing, service descriptions</li>
-<li>Settings → set persona: name, greeting, instructions ("Always collect name and email before answering pricing questions. For booking: [CALENDLY LINK]")</li>
-<li>Appearance → match brand colours</li>
-<li>Copy embed code → add to client website before &lt;/body&gt; tag</li>
-<li>Test with 10 real customer questions</li>
-<li>Set up lead notifications (Chatbase → Integrations → email/Slack)</li>
+<h3>The One-Page Offer</h3>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+FOR: [specific business type]
+PROBLEM: [the specific pain you solve]
+SOLUTION: [what you deliver, in plain language]
+DELIVERABLES: [exact list of what they get]
+TIMELINE: [realistic delivery timeline]
+PRICE: [£X setup + £Y/month ongoing]
+GUARANTEE: [what happens if they're not happy]
+</pre>
+
+<h3>The Proposal Structure</h3>
+<ol>
+<li>Their situation (show you listened on the discovery call)</li>
+<li>The problem and its cost (quantify it if you can)</li>
+<li>Your solution (specific, not vague)</li>
+<li>What's included (exact deliverables)</li>
+<li>Timeline (specific dates)</li>
+<li>Investment (clear, no surprises)</li>
+<li>Next step (a single clear action)</li>
 </ol>
-</div>
 
-<h3>Pricing</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Package</th><th class="pb-2">Setup</th><th class="pb-2">Monthly</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Basic FAQ Bot</td><td>£400</td><td>£80</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Lead Qualifier</td><td>£800</td><td>£150</td></tr>
-<tr><td class="py-2">Custom Agent (API-built)</td><td>£2,000+</td><td>£400+</td></tr>
-</table>`
+<h3>Closing Without Being Pushy</h3>
+<p>After sending the proposal, schedule a 20-minute "walk through" call. Walk through it together — don't send it and wait. On the call: "Does this reflect what we discussed?" → "Are there any questions?" → "Are you happy to move forward?"</p>
+<p>Silence is not rejection. Follow up after 48 hours if you hear nothing.</p>`
       },
       {
         id: 4,
-        title: "AI Lead Generation Systems",
-        description: "Build automated outbound lead generation systems worth £2,000–4,000 per client",
-        duration: "28 min",
-        content: `<h2>The £2,000–4,000 Service Offering</h2>
-<p>Lead generation is the lifeblood of every business. AI can automate the entire prospecting process — research, personalisation, outreach, and follow-up.</p>
+        title: "From Project to Retainer",
+        description: "Turn one-off work into monthly recurring income",
+        duration: "18 min",
+        content: `<h2>The Retainer is the Business Model</h2>
+<p>One-off projects pay once. Retainers pay every month. Every service you deliver should have a natural ongoing component — maintenance, updates, reporting, fresh content — that justifies a monthly fee.</p>
 
-<h3>The Tech Stack</h3>
-<ul>
-<li><strong>Apollo.io</strong> — Pull prospect lists (name, company, email, LinkedIn)</li>
-<li><strong>Clay</strong> — Advanced enrichment (company news, LinkedIn posts, tech stack)</li>
-<li><strong>Claude via Make</strong> — Write personalised opening lines for each prospect</li>
-<li><strong>Instantly.ai</strong> — Send sequences from warmed domains at scale</li>
-<li><strong>HubSpot free</strong> — Route positive replies into CRM automatically</li>
-</ul>
-
-<h3>The Workflow</h3>
-<ol>
-<li>Define ideal customer profile (ICP) with the client</li>
-<li>Pull 500–1,000 prospect list from Apollo matching ICP</li>
-<li>AI researches each prospect (LinkedIn posts, company news via Clay)</li>
-<li>Claude writes personalised opening line for each email (under 20 words, sounds human)</li>
-<li>Load into Instantly with 3–5 touch follow-up sequence</li>
-<li>Positive replies route automatically to client CRM</li>
-</ol>
-
-<h3>Pricing</h3>
+<h3>The Retainer Ladder</h3>
 <table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Model</th><th class="pb-2">Price</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Setup fee (build the system)</td><td>£2,000–4,000</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Monthly management retainer</td><td>£1,200–2,500/month</td></tr>
-<tr><td class="py-2">Per qualified lead (performance)</td><td>£50–150 per lead</td></tr>
+<tr class="border-b border-gray-700"><th class="pb-2">Service</th><th class="pb-2">Setup</th><th class="pb-2">Retainer</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Website</td><td>£1,500</td><td>£100–200/month (hosting, updates)</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Chatbot</td><td>£800</td><td>£150–300/month (monitoring, retraining)</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Content</td><td>—</td><td>£600–1,500/month (4+ pieces/month)</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Lead gen system</td><td>£2,500</td><td>£1,000–2,000/month (management)</td></tr>
+<tr><td class="py-2">Automation</td><td>£1,500</td><td>£300–600/month (monitoring, updates)</td></tr>
 </table>
 
-<div class="bg-yellow-900/30 p-4 rounded-lg mt-6">
-<h4>⚠️ Compliance</h4>
-<p>Always comply with CAN-SPAM (US) and GDPR (UK/EU). Use verified data, include unsubscribe options, and send from warmed domains — not your main business email.</p>
-</div>`
-      },
-      {
-        id: 5,
-        title: "Packaging and Pricing Your Services",
-        description: "Create compelling offers, price with confidence, and close deals",
-        duration: "22 min",
-        content: `<h2>From Skills to Sales</h2>
-<p>Great skills don't sell themselves. You need clear, compelling offers that make buying an easy decision.</p>
+<h3>Five Retainer Clients at £800/month</h3>
+<p>Five retainers at £800/month = £4,000/month. With AI doing most of the execution, your actual time per client is 4–6 hours/month. That's 20–30 hours of client work at £160–200/hour effective rate. Achievable in 3–6 months from a standing start.</p>
 
-<h3>The Offer Framework</h3>
+<h3>Client Retention</h3>
 <ul>
-<li><strong>Problem:</strong> What specific pain are you solving?</li>
-<li><strong>Promise:</strong> What measurable outcome do you deliver?</li>
-<li><strong>Price:</strong> What's the investment?</li>
-<li><strong>Proof:</strong> Why should they trust you to deliver?</li>
-</ul>
-
-<h3>Good vs Bad Positioning</h3>
-<div class="bg-red-900/30 p-4 rounded-lg mb-4">
-<p><strong>❌ Bad:</strong> "I do AI stuff and can help with your business"</p>
-</div>
-<div class="bg-green-900/30 p-4 rounded-lg">
-<p><strong>✅ Good:</strong> "I help estate agents get 20+ qualified leads per month with AI-powered outreach systems. Fully built in 2 weeks. Money-back guarantee if you don't see results in 60 days."</p>
-</div>
-
-<h3>Always Offer 3 Tiers</h3>
-<ul>
-<li><strong>Starter:</strong> Entry point, lower risk — anchors the conversation</li>
-<li><strong>Professional:</strong> Your main offer (most people buy this)</li>
-<li><strong>Premium:</strong> White-glove, done-for-you — makes Professional look reasonable</li>
-</ul>
-
-<h3>Handling Price Objections</h3>
-<ul>
-<li><strong>"Too expensive":</strong> "Compared to what? Let me show you the ROI calculation..."</li>
-<li><strong>"Can you do cheaper?":</strong> "I can adjust the scope. What's absolutely essential to you?"</li>
-<li><strong>"Let me think about it":</strong> "Of course — what questions can I answer to help you decide?"</li>
-</ul>
-
-<h3>Building Social Proof Fast</h3>
-<ul>
-<li>Do 3–5 projects at 50% discount in exchange for a detailed testimonial with real numbers</li>
-<li>Document results: "enquiries increased 40% in 30 days"</li>
-<li>Ask for short video testimonials — they convert 3–5x better than text</li>
+<li>Send a monthly report — even a brief one — showing what was done and the results</li>
+<li>Bring one idea or observation per month that wasn't asked for</li>
+<li>Document everything so the client feels dependent on the system, not just you personally</li>
+<li>Annual review call: what changed, what's next, is there more scope?</li>
 </ul>`
       }
     ]
   },
   {
     id: 4,
-    title: "AI Automation and Agents",
-    description: "Move from selling services to building systems that scale without you.",
-    outcome: "Students create automated systems that produce results with minimal ongoing manual work.",
+    title: "AI Automation and Agent Systems",
+    description: "Build Make and n8n workflows that run 24/7 — and sell them to businesses for recurring income.",
+    outcome: "Students have one production-ready automation deployed and documented for client delivery.",
     icon: "Zap",
     lessons: [
       {
         id: 1,
-        title: "What AI Agents Are",
-        description: "Understanding autonomous AI systems and how they change everything",
+        title: "Automation Fundamentals Without the Jargon",
+        description: "Triggers, actions, logic and data — plainly explained",
         duration: "18 min",
-        content: `<h2>From Tools to Team Members</h2>
-<p>AI agents represent the next evolution. Instead of you using AI tools, agents use tools on your behalf — autonomously, across multiple steps, while you focus on other things.</p>
+        content: `<h2>Everything Is: Something Happens, Then Something Else Happens</h2>
+<p>Every automation, no matter how complex, is just a chain of: trigger → actions. Once you internalise this, every workflow becomes readable.</p>
 
-<h3>The Agent Difference</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Traditional AI</th><th class="pb-2">AI Agents</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Single response</td><td>Multi-step autonomous workflows</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">You manage every step</td><td>Agent manages the process</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Forgets between sessions</td><td>Memory and context retention</td></tr>
-<tr><td class="py-2">One task at a time</td><td>Orchestrates multiple tools in parallel</td></tr>
-</table>
-
-<h3>The 2026 Agent Landscape</h3>
-<p>Multi-agent workflows went mainstream. Teams run multiple Claude instances simultaneously — one researching, one writing, one reviewing, one deploying. The bottleneck shifted from "can AI do this?" to "how do I coordinate multiple agents?"</p>
-
-<h3>Real-World Agent Examples</h3>
+<h3>The Four Components</h3>
 <ul>
-<li><strong>Claude Dispatch:</strong> Persistent desktop agent — send tasks from your phone while your Mac executes them</li>
-<li><strong>OpenClaw:</strong> Open source, runs via Telegram. 247K GitHub stars. Model-agnostic.</li>
-<li><strong>Codex:</strong> Cloud agent running multiple coding tasks in parallel sandboxes</li>
-<li><strong>Make + Claude:</strong> Research, write, post — triggered automatically on a schedule</li>
-</ul>`
+<li><strong>Trigger:</strong> the event that starts the workflow. New email. New form submission. Scheduled time. New row in a spreadsheet. New Stripe payment.</li>
+<li><strong>Action:</strong> something the automation does. Send an email. Create a document. Call an API. Ask Claude something. Write to a database.</li>
+<li><strong>Logic:</strong> conditions that change what happens. If the email is marked urgent, route it differently. If the revenue is over £1,000, notify the CEO.</li>
+<li><strong>Data:</strong> the information that moves through the workflow. The email body. The customer name. The payment amount. The AI response.</li>
+</ul>
+
+<h3>Make vs n8n vs Zapier — The Honest Comparison</h3>
+<table class="w-full text-left mt-4">
+<tr class="border-b border-gray-700"><th class="pb-2"></th><th class="pb-2">Make</th><th class="pb-2">n8n</th><th class="pb-2">Zapier</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Best for</td><td>Complex client work</td><td>High volume, self-hosted</td><td>Simple, quick wins</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Claude integration</td><td>Native module</td><td>HTTP node</td><td>Native module</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Pricing</td><td>From $9/month</td><td>Free (self-host)</td><td>From $19.99/month</td></tr>
+<tr><td class="py-2">Learning curve</td><td>Medium</td><td>Medium-High</td><td>Low</td></tr>
+</table>
+<p class="mt-3"><strong>Start with Make.</strong> It has the best balance of power and usability, and a native Claude integration that requires no API setup.</p>`
       },
       {
         id: 2,
-        title: "Building AI Workflows in Make",
-        description: "Hands-on workflow building that generates real client value",
+        title: "Five Automations That Clients Will Pay For",
+        description: "Real builds that solve real business problems",
         duration: "35 min",
-        content: `<h2>Your First Production Automation</h2>
-<p>Theory is nothing without execution. Let's build real workflows that generate real value for clients.</p>
+        content: `<h2>Build These, Sell These</h2>
+<p>Each of these is a real workflow you can build in Make in under 3 hours, test, and deliver to a client.</p>
 
-<h3>5 AI Automations That Make Money</h3>
+<h3>Build 1: Email Triage and Classification</h3>
+<p><strong>Value:</strong> saves 1–2 hours/day for busy business owners</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Trigger: New email arrives in Gmail
+↓
+Claude: "Classify as URGENT/IMPORTANT/NEWSLETTER/RECEIPT.
+Email: [subject] | [sender] | [body preview]"
+↓
+If URGENT → apply label "AI-Urgent" + Slack alert
+If IMPORTANT → apply label "AI-Important"
+If NEWSLETTER → archive
+If RECEIPT → apply label "Receipts" + log to Google Sheets
+</pre>
 
-<h4>1. Email Triage (saves clients 1–2 hours/day)</h4>
-<p>Gmail → Claude classifies as Lead/Support/Spam → Routes to appropriate team + logs to Sheet</p>
+<h3>Build 2: Content Repurposing Pipeline</h3>
+<p><strong>Value:</strong> one piece of content becomes six, automatically</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Trigger: New YouTube video published (webhook)
+↓
+Claude: "Write a LinkedIn post (300 words), a Twitter thread
+(5 tweets), and an Instagram caption (150 words) based
+on this video transcript: [transcript]"
+↓
+Buffer: schedule each post for optimal times
+Google Sheets: log video + content produced
+</pre>
 
-<h4>2. Content Pipeline (replaces a content writer)</h4>
-<p>Schedule → Perplexity researches topic → Claude writes draft → Google Doc created → Notification to reviewer</p>
+<h3>Build 3: Lead Enrichment and CRM Update</h3>
+<p><strong>Value:</strong> sales teams get pre-qualified, researched leads instead of raw contacts</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Trigger: New row added to CRM or Google Sheet (new lead)
+↓
+Apollo.io API: enrich with company data, LinkedIn, revenue
+↓
+Claude: "Score this lead 1–10 and write 3 personalised
+talking points based on their profile: [enrichment data]"
+↓
+CRM: update lead record with score and talking points
+Slack: notify sales rep with summary
+</pre>
 
-<h4>3. Social Media Repurposing</h4>
-<p>New blog post → Claude creates LinkedIn post + Twitter thread + Instagram caption → Buffer schedules each</p>
+<h3>Build 4: Weekly Business Intelligence Report</h3>
+<p><strong>Value:</strong> clients get a weekly briefing without asking for it</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Trigger: Every Friday at 4pm
+↓
+Stripe API: revenue this week vs last week
+Google Analytics: traffic and conversions
+Google News: "[client industry] news this week"
+↓
+Claude: "Write a concise weekly business summary covering:
+revenue, key traffic changes, and 3 industry developments
+the business owner should know about. Under 300 words."
+↓
+Gmail: send formatted report to client
+</pre>
 
-<h4>4. Review Response (saves retail/hospitality time)</h4>
-<p>New Google review → Claude drafts personalised response → Email to owner for approval → Post on approval</p>
+<h3>Build 5: Google Review Auto-Response</h3>
+<p><strong>Value:</strong> local businesses respond to every review professionally, automatically</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Trigger: New Google review detected (Make Google module)
+↓
+Claude: "Write a professional, warm response to this
+Google review for [business name]. If positive, thank them
+specifically. If negative, acknowledge and offer to resolve.
+Under 80 words. Do not be generic."
+↓
+Email to owner: "Approve this response before posting?"
+↓
+On approval: post response via Google API
+</pre>
 
-<h4>5. Lead Scoring (boosts sales efficiency)</h4>
-<p>New CRM contact → Apollo enrichment → Claude scores and writes talking points → Slack notification to sales</p>
-
-<h3>Building Each Automation</h3>
-<ol>
-<li>Go to make.com → Create account → New scenario</li>
-<li>Add your trigger (the thing that starts the automation)</li>
-<li>Add "Anthropic Claude" module — connect your API key, choose Claude Sonnet 4.6</li>
-<li>Write your prompt — use data from previous steps as variables</li>
-<li>Add output module (Sheet, Slack, email, CRM)</li>
-<li>Click "Run once" to test with real data</li>
-<li>Fix any issues, then turn on scheduling</li>
-<li>Monitor the first 10 runs manually before trusting it fully</li>
-</ol>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 Selling Automations</h4>
-<p>Charge £500–2,000 setup + £200–500/month management. Build it once, manage multiple clients on similar systems. Pure leverage.</p>
-</div>`
+<h3>Selling These</h3>
+<p>Build 1–3 for a real business in your network (free, in exchange for a testimonial). Then sell the same builds to similar businesses. Charge £500–1,500 setup per automation + £200–500/month management.</p>`
       },
       {
         id: 3,
-        title: "AI Content Pipelines",
-        description: "Build end-to-end content production systems that run on autopilot",
-        duration: "30 min",
-        content: `<h2>Content Factory Mode</h2>
-<p>A fully automated content pipeline does everything from ideation to publishing. One person with this system can outproduce a 5-person content team.</p>
+        title: "Documenting and Delivering Automations to Clients",
+        description: "How to hand over work professionally — and why documentation is what justifies the retainer",
+        duration: "15 min",
+        content: `<h2>Delivery Is Where Amateurs Lose Clients</h2>
+<p>A working automation that's poorly documented will lose a client at the first thing that goes wrong. A well-documented system makes you indispensable.</p>
 
-<h3>The Full Pipeline</h3>
+<h3>The Delivery Package</h3>
 <ol>
-<li><strong>Ideation:</strong> AI generates ideas from trending topics and competitor gaps</li>
-<li><strong>Research:</strong> Perplexity gathers up-to-date facts and sources</li>
-<li><strong>Outline:</strong> Claude creates structured outline</li>
-<li><strong>Draft:</strong> Claude writes the full first draft</li>
-<li><strong>Human review:</strong> You spend 15–20 minutes editing</li>
-<li><strong>Visuals:</strong> Ideogram generates featured image from headline</li>
-<li><strong>Publish:</strong> Auto-post to WordPress via API</li>
-<li><strong>Repurpose:</strong> Claude creates LinkedIn + X + Instagram versions, Buffer schedules all</li>
+<li><strong>Video walkthrough (5–10 min):</strong> Record your screen walking through exactly what the automation does, step by step. Use Loom (free). Client keeps this forever.</li>
+<li><strong>Written documentation (1 page):</strong> What the automation does. What triggers it. What it outputs. What to do if something fails. Contact details.</li>
+<li><strong>Test report:</strong> Screenshots or logs showing 5 successful test runs with real or realistic data.</li>
+<li><strong>Error notification setup:</strong> Make has built-in error alerts — set these up to email you (not the client) when something fails.</li>
 </ol>
 
-<h3>Weekly Blog Pipeline (Build Once, Runs Forever)</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Monday 9am: Make scenario runs
-→ Perplexity searches "[industry] trends this week"
-→ Claude generates 5 title options
-→ Slack message to you: "Pick one: [options]"
+<h3>Why Documentation Justifies the Retainer</h3>
+<p>When you document the system properly, the client understands what they have — and they know they'd lose it if something broke and you weren't there to fix it. That is what justifies £200–500/month for monitoring and maintenance.</p>
 
-Tuesday (after your pick):
-→ Claude researches and writes 1,500-word draft
-→ Google Doc created with draft
-→ Ideogram generates featured image
-
-Wednesday: You spend 20 minutes editing
-
-Thursday:
-→ Auto-publish to WordPress
-→ Claude creates social versions
-→ Buffer schedules for optimal times
-</pre>
-
-<h3>What This Produces</h3>
+<h3>What to Monitor</h3>
 <ul>
-<li>4+ blog posts per week (you touch each for ~20 minutes)</li>
-<li>Daily social content across all platforms</li>
-<li>Weekly email newsletter digest</li>
-<li>All SEO-optimised with meta titles and descriptions</li>
-</ul>
-<p class="mt-3">Sell this as a managed service: £2,500–4,000 setup + £1,500–2,500/month.</p>`
-      },
-      {
-        id: 4,
-        title: "AI Prospecting Agents",
-        description: "Build automated outbound prospecting that runs overnight",
-        duration: "28 min",
-        content: `<h2>Automated Outreach at Scale</h2>
-<p>A prospecting agent can research leads, write personalised messages, and handle initial responses. This is one of the highest-value services you can build or sell.</p>
-
-<h3>Claude Prompt for Each Prospect</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Write a personalised cold email opening line (under 20 words) for
-{{name}} at {{company}}.
-
-Their recent LinkedIn post: {{recent_post}}
-Company news: {{company_news}}
-Their role: {{job_title}}
-
-Requirements:
-- Reference something specific about them or their company
-- Sound human, not AI-generated
-- Never use "I hope this email finds you well"
-- End naturally so I can follow with my pitch
-</pre>
-
-<h3>Expected Results</h3>
-<p>AI-personalised outreach typically achieves 4–8% reply rates vs 0.5–1% for generic bulk email.</p>
-
-<h3>What You Need to Start</h3>
-<ul>
-<li>Apollo free account (50 prospects/month) or $49/month (unlimited)</li>
-<li>Instantly.ai Basic ($37/month) for sending infrastructure</li>
-<li>Make free account for the automation</li>
-<li>Anthropic API key (~£0.50–2 per 1,000 prospects)</li>
-<li>A warmed sending domain (separate from your main business email)</li>
-</ul>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 Pricing This Service</h4>
-<p>Sell as managed service: £2,000–3,000 setup + £1,000–1,500/month management. Your margin after tools: 70–80%.</p>
-</div>`
-      },
-      {
-        id: 5,
-        title: "Autonomous Task Agents",
-        description: "Building agents that work independently on complex goals",
-        duration: "25 min",
-        content: `<h2>Set It and Forget It</h2>
-<p>Autonomous agents operate with minimal supervision on complex multi-step tasks. This is the cutting edge of what's practical in May 2026.</p>
-
-<h3>Realistic Expectations</h3>
-<p>Claude Dispatch has ~50% success rate on complex multi-app tasks. That's not a flaw — it's honest. Use agents for tasks where you can review outputs, not for anything truly mission-critical without human oversight.</p>
-
-<h3>Where Agents Excel Today</h3>
-<ul>
-<li><strong>Research and summarisation</strong> — very reliable, great ROI</li>
-<li><strong>File organisation and document processing</strong> — reliable on structured tasks</li>
-<li><strong>Code generation and testing</strong> — reliable with human review</li>
-<li><strong>Scheduled recurring tasks</strong> — weekly reports, daily digests — reliable once configured</li>
-<li><strong>Complex multi-app workflows</strong> — improving, ~50–70% success rate</li>
-</ul>
-
-<h3>Building a Research Agent (Make + Claude)</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Trigger: Scheduled weekly (Monday 7am)
-
-Steps:
-1. HTTP module → search Google News for
-   "[industry] news this week"
-2. Scrape top 5 article URLs
-3. Claude: summarise key trends from articles
-4. Claude: identify implications for [client's business]
-5. Create Google Doc with formatted report
-6. Email to client: "Weekly AI Brief — [Date]"
-</pre>
-
-<h3>Agent Best Practices</h3>
-<ul>
-<li><strong>Start supervised:</strong> Watch 10 runs before going fully autonomous</li>
-<li><strong>Clear goals:</strong> Vague instructions produce vague results</li>
-<li><strong>Narrow scope:</strong> One agent does one thing well</li>
-<li><strong>Log everything:</strong> Essential for debugging and client reporting</li>
-<li><strong>Error alerts:</strong> Make should notify you via Slack if anything fails</li>
+<li>Make execution logs — check weekly, look for errors</li>
+<li>API rate limits — especially for automations hitting Google, Stripe or social platforms</li>
+<li>Output quality — sample 3–5 outputs per week to make sure Claude's results are still good</li>
+<li>Costs — if API usage spikes, investigate before it hits the client's budget</li>
 </ul>`
       }
     ]
@@ -983,190 +696,146 @@ Steps:
   {
     id: 5,
     title: "AI Monetisation Models",
-    description: "Every way AI turns into sustainable, scalable income — freelancing, agency, SaaS, products, and more.",
-    outcome: "Students choose a monetisation path and build a repeatable income model.",
+    description: "The full map of income paths — freelancing, agency, SaaS, digital products, affiliate — with honest starting points for each.",
+    outcome: "Students choose one primary income model and take the first concrete action towards it.",
     icon: "TrendingUp",
     lessons: [
       {
         id: 1,
-        title: "Freelancing with AI",
-        description: "Supercharge your freelance income using AI as leverage",
+        title: "Freelancing With AI as Your Leverage",
+        description: "Position and price for the AI-enabled market — not against it",
         duration: "20 min",
-        content: `<h2>The AI-Powered Freelancer</h2>
-<p>AI doesn't replace freelancers — it makes good freelancers extraordinary. The ones struggling are ignoring AI. The ones thriving are using it as leverage to deliver more, faster, at better margins.</p>
+        content: `<h2>AI Doesn't Replace Freelancers. It Restructures the Market.</h2>
+<p>Freelancers who are losing work in 2027 are those who refused to adapt. The ones doing well have repositioned — they're not competing on speed, they're competing on outcome quality and specialist knowledge that AI alone can't deliver.</p>
 
-<h3>High-Demand AI Freelance Services (2026)</h3>
+<h3>What's in Demand in 2027</h3>
 <ul>
-<li>AI automation building (Make/n8n workflows) — £500–3,000 per project</li>
-<li>AI-assisted content writing and editing — £80–250 per piece</li>
-<li>AI chatbot development — £400–2,000 setup</li>
-<li>Prompt engineering for business systems — £100–500/day</li>
-<li>AI video production (HeyGen, Runway) — £300–1,000 per video</li>
-<li>Claude Code builds for non-developers — £500–3,000 per app</li>
+<li>AI automation builds (Make/n8n) — £500–3,000/project</li>
+<li>AI service packaging and delivery — £800–2,500/month retainer</li>
+<li>Claude Code builds for non-developers — £500–3,000/app</li>
+<li>AI consulting — helping businesses identify where AI applies — £800–2,000/day</li>
+<li>AI content strategy and production — £600–1,500/month</li>
 </ul>
 
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Launch Your Upwork Profile in 30 Minutes</h4>
-<ol class="mt-2 space-y-2">
-<li>Go to upwork.com and create a freelancer account</li>
-<li>Claude prompt: "Write an Upwork profile title and overview for an AI automation specialist who builds Make/n8n workflows and AI chatbots for small businesses. Results-focused, under 500 characters."</li>
-<li>Set your rate to £60/hour (raise after 5 reviews)</li>
-<li>Add 3 portfolio items — even samples you built for practice</li>
-<li>Apply to 5 jobs per day with personalised proposals</li>
-<li>Claude prompt for each: "Write an Upwork proposal for [job description]. Under 150 words. Open with their specific problem."</li>
-</ol>
-</div>
+<h3>Platform Strategy</h3>
+<ul>
+<li><strong>Upwork:</strong> Best for getting started and building reviews. Competitive, but AI skills are in genuine demand. Set rate at £60–80/hour to start.</li>
+<li><strong>LinkedIn:</strong> Best for consulting and higher-value work. Positioning content is your funnel.</li>
+<li><strong>Direct outreach:</strong> Best ROI once you have proof of results. No platform fees.</li>
+</ul>
 
-<h3>Pricing by Experience Level</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Level</th><th class="pb-2">Hourly</th><th class="pb-2">Project Min</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Beginner (0–5 reviews)</td><td>£40–60</td><td>£400</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Intermediate (5–20 reviews)</td><td>£80–120</td><td>£1,000</td></tr>
-<tr><td class="py-2">Expert (20+ reviews)</td><td>£150–250+</td><td>£3,000+</td></tr>
-</table>`
+<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
+<h4>📋 Launch Your Profile This Week</h4>
+<ol class="mt-2 space-y-2">
+<li>Claude prompt: "Write an Upwork profile title and overview for an AI automation specialist who builds Make and n8n workflows and AI chatbots. Focus on business outcomes, not tools. Under 500 characters."</li>
+<li>Add 3 portfolio items — even practice builds count</li>
+<li>Apply to 5 jobs/day with personalised proposals (Claude writes the first draft)</li>
+</ol>
+</div>`
       },
       {
         id: 2,
         title: "Building an AI Agency",
-        description: "Scale beyond freelancing into a leveraged agency model",
-        duration: "25 min",
-        content: `<h2>From Freelancer to Agency Owner</h2>
-<p>An agency lets you scale beyond your personal capacity. With AI as your delivery infrastructure, the economics are far better than traditional agencies.</p>
+        description: "Scale beyond your personal capacity with AI as your delivery infrastructure",
+        duration: "22 min",
+        content: `<h2>The AI-First Agency Model</h2>
+<p>An agency lets you earn more than your personal hours allow. The AI-first version has very different economics to a traditional agency — lower headcount, higher margin, faster delivery.</p>
 
-<h3>The AI-First Agency Structure</h3>
+<h3>The Structure</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
 You (Founder)
-├── Sales and Client Management
-├── AI Delivery Systems
-│   ├── Make/n8n workflows (content, reporting)
+├── Sales and client relationships
+├── AI delivery systems
+│   ├── Make/n8n automations (content, reporting)
 │   ├── Claude Code for custom builds
-│   └── AI agents running in background
-└── Human Team (minimal)
-    ├── 1–2 editors/QA contractors
-    └── VA for admin
+│   └── Agents running on schedule
+└── Small human team
+    ├── 1–2 editors or QA (part-time contractors)
+    └── VA for admin (optional)
 </pre>
 
-<h3>Growth Path</h3>
+<h3>Realistic Growth Path</h3>
 <ol>
-<li><strong>Phase 1 (0–3 months):</strong> Solo + AI — target £3–5k/month</li>
-<li><strong>Phase 2 (3–9 months):</strong> Add 1–2 part-time contractors — target £8–15k/month</li>
-<li><strong>Phase 3 (9–18 months):</strong> Systematise delivery — target £20–40k/month</li>
-<li><strong>Phase 4:</strong> Hire ops manager, focus entirely on sales and growth</li>
+<li><strong>Months 1–3:</strong> Solo + AI. Target: £3–5K/month. Prove the delivery model.</li>
+<li><strong>Months 3–9:</strong> Add 1–2 contractors for QA and admin. Target: £8–15K/month.</li>
+<li><strong>Months 9–18:</strong> Systematise everything. Target: £20–40K/month.</li>
+<li><strong>Month 18+:</strong> Hire ops manager. Focus on sales and new service lines.</li>
 </ol>
 
-<h3>Key Metrics</h3>
-<ul>
-<li><strong>MRR:</strong> Monthly recurring revenue — your foundation</li>
-<li><strong>Churn rate:</strong> Keep below 5% monthly</li>
-<li><strong>Gross margin:</strong> Aim for 60–70%+ on service delivery</li>
-<li><strong>Client LTV:</strong> How long clients stay and what they spend total</li>
-</ul>`
+<h3>The Biggest Mistake</h3>
+<p>Scaling before delivery is solid. Get to £5K/month reliably — on time, high quality, low complaints — before adding complexity. One unhappy client from rushed delivery costs more than a month of growth.</p>`
       },
       {
         id: 3,
-        title: "AI SaaS and Micro-Tools",
-        description: "Build and sell AI-powered software products with 80–90% margins",
-        duration: "28 min",
-        content: `<h2>Products That Scale Without You</h2>
-<p>Micro-SaaS products solve specific problems for specific audiences. AI makes building them faster than ever — from idea to paying customers in under a month is realistic in 2026.</p>
+        title: "Digital Products and Affiliate Income",
+        description: "Create once, sell repeatedly — the case for passive income through products",
+        duration: "22 min",
+        content: `<h2>Products That Sell Without Active Delivery</h2>
+<p>Digital products have 80–95% margins once built. AI compresses creation time from weeks to days. The economics are extraordinary — the constraint is audience and distribution, not production.</p>
 
-<h3>Underserved Micro-SaaS Ideas (2026)</h3>
+<h3>Products Worth Building in 2027</h3>
 <ul>
-<li>AI Google Review responder for local businesses (auto-drafts responses for owner approval)</li>
-<li>Job description AI scorer — "How AI-proof is this role?"</li>
-<li>Content repurposer: paste YouTube transcript → get blog + social posts</li>
-<li>AI proposal generator for specific freelance niches</li>
-<li>Estate agent listing description generator</li>
-<li>AI meeting notes → Notion/Slack with action items extraction</li>
+<li><strong>Prompt and template packs:</strong> curated, tested, for specific use cases — £15–97</li>
+<li><strong>Notion or Airtable systems:</strong> business systems ready to use — £27–97</li>
+<li><strong>Mini-courses (under 2 hours):</strong> specific skill, fast outcome — £97–297</li>
+<li><strong>AI tool review and comparison site:</strong> affiliate-monetised, content-driven — ongoing income</li>
 </ul>
 
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6 mb-6">
-<h4>📋 Validate Before Building</h4>
-<ol class="mt-2 space-y-2">
-<li>Find a problem on Reddit (r/Entrepreneur, r/smallbusiness): "I wish there was a tool that..."</li>
-<li>Check if people already pay for solutions. Competitors = good. No competitors = be careful.</li>
-<li>Post in relevant communities: "I'm building a [TOOL] for [AUDIENCE]. Would you pay £X/month?" Get 10 genuine yes answers before building.</li>
-<li>Build a landing page first (Carrd.co, free). Capture email waitlist.</li>
-<li>Get 50 signups before writing code. Can't get 50? Reconsider the idea.</li>
-<li>Build MVP: Bolt.new + Supabase + Stripe. Get 10 paying customers before investing more time.</li>
-</ol>
-</div>
+<h3>Top Affiliate Programmes in 2027</h3>
+<table class="w-full text-left mt-4">
+<tr class="border-b border-gray-700"><th class="pb-2">Programme</th><th class="pb-2">Commission</th><th class="pb-2">Type</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Make</td><td>20%</td><td>Recurring</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Surfer SEO</td><td>25%</td><td>Recurring</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Chatbase</td><td>30%</td><td>Recurring</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">HeyGen</td><td>30%</td><td>Recurring</td></tr>
+<tr><td class="py-2">Notion</td><td>50% first year</td><td>One-time</td></tr>
+</table>
+<p class="mt-3 text-gray-500 text-xs">Affiliate links must be disclosed in every piece of content where they appear. See Affiliate Disclosure policy.</p>
 
-<h3>Build Stack (Non-Developer Friendly)</h3>
-<ul>
-<li><strong>App:</strong> Bolt.new or Lovable</li>
-<li><strong>Database + Auth:</strong> Supabase (free tier very generous)</li>
-<li><strong>Payments:</strong> Stripe (Bolt/Lovable can integrate this)</li>
-<li><strong>Hosting:</strong> Vercel (free hobby tier)</li>
-<li><strong>Custom features:</strong> Claude Code for anything complex</li>
-</ul>`
+<h3>The Compound Effect</h3>
+<p>One customer on a recurring affiliate at £6/month commission seems small. 200 customers = £1,200/month from one programme, passively, from SEO content you wrote once. That's the model — it just takes 12–18 months to build.</p>`
       },
       {
         id: 4,
-        title: "Digital Products and Affiliate Marketing",
-        description: "Passive income through AI-created products and recurring affiliate commissions",
-        duration: "22 min",
-        content: `<h2>Passive Income Streams</h2>
-<p>Digital products sell while you sleep. AI compresses creation time from weeks to days — and the margins are extraordinary (80–95%).</p>
+        title: "Micro-SaaS — Build a Tool, Sell a Subscription",
+        description: "The mechanics of validating and shipping a small software product in 2027",
+        duration: "28 min",
+        content: `<h2>One Problem, One Tool, £9–49/Month</h2>
+<p>Micro-SaaS products solve one specific problem for one specific audience. AI makes building them faster than ever — from idea to paying customers in under a month is realistic in 2027.</p>
 
-<h3>Product Types and Price Points</h3>
+<h3>Finding the Idea</h3>
 <ul>
-<li><strong>Prompt packs:</strong> Curated, tested prompts for specific use cases — £15–97</li>
-<li><strong>Templates:</strong> Notion/Airtable business systems — £27–97</li>
-<li><strong>eBooks and guides:</strong> Practical how-to content — £19–49</li>
-<li><strong>Mini-courses:</strong> Short, focused video training — £97–297</li>
-<li><strong>Full courses:</strong> Comprehensive programmes — £297–997</li>
+<li>Search Reddit: "I wish there was a tool that..." in relevant subreddits</li>
+<li>Look at AppSumo — what tools are selling? What's missing?</li>
+<li>Think about repetitive tasks in services you're already delivering — could this be a product?</li>
+<li>Look at your own frustrations — if you have the problem, others do too</li>
 </ul>
 
-<h3>Top AI Tool Affiliate Programs</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Program</th><th class="pb-2">Commission</th><th class="pb-2">Type</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Jasper</td><td>30%</td><td>Recurring</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Surfer SEO</td><td>25%</td><td>Recurring</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Make</td><td>20%</td><td>Recurring</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Chatbase</td><td>30%</td><td>Recurring</td></tr>
-<tr><td class="py-2">Notion</td><td>50% first year</td><td>One-time</td></tr>
-</table>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 The Recurring Commission Play</h4>
-<p>One customer converting to a £20/month tool at 30% commission pays you £6/month indefinitely. Get 200 customers = £1,200/month passive. Build this through SEO content that ranks and brings traffic on autopilot.</p>
-</div>`
-      },
-      {
-        id: 5,
-        title: "Scaling and Reinvesting Profits",
-        description: "Grow your AI business from income to wealth systematically",
-        duration: "20 min",
-        content: `<h2>From Income to Wealth</h2>
-<p>Making money is step one. Growing it sustainably is the real game.</p>
-
-<h3>The Reinvestment Framework</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Monthly Revenue
-├── 50% — Business operations
-│   ├── AI tools and software
-│   ├── Contractors (editors, VA, QA)
-│   └── Paid distribution and marketing
-├── 30% — Personal income
-└── 20% — Growth fund
-    ├── New tool experiments (budget-capped)
-    ├── Education and courses
-    └── Building new income streams
-</pre>
-
-<h3>The Five Scaling Levers</h3>
+<h3>Validate Before Building</h3>
 <ol>
-<li><strong>Automation:</strong> Every manual recurring task should eventually run on its own</li>
-<li><strong>Delegation:</strong> Hire contractors for tasks below your effective hourly rate</li>
-<li><strong>Products:</strong> Add passive income streams alongside active services</li>
-<li><strong>Price increases:</strong> Raise rates 20–30% every 6 months as you build proof</li>
-<li><strong>Niching:</strong> Specialise in one industry — command premium rates, easier to win clients</li>
+<li>Build a landing page in Carrd.co (free) — describe the tool, show a price, add email capture</li>
+<li>Post in relevant communities: "Building a tool for [specific pain point]. Would you pay £X/month?" Get 10 genuine yes answers.</li>
+<li>Get 50 email signups before writing code. If you can't get 50 interested people, reconsider the idea.</li>
 </ol>
 
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💰 Core Principle</h4>
-<p>The goal isn't to work more. It's to earn more per hour worked — and eventually per hour you're NOT working. AI is your leverage. Every hour building a system that runs automatically is an hour that keeps paying you.</p>
+<h3>Build Stack (No Developer Background Needed)</h3>
+<ul>
+<li><strong>App:</strong> Bolt.new or Lovable — describe in English, get working code</li>
+<li><strong>Database and auth:</strong> Supabase (free tier is generous)</li>
+<li><strong>Payments:</strong> Stripe (Bolt and Lovable can integrate this directly)</li>
+<li><strong>Hosting:</strong> Netlify or Vercel (both have free tiers)</li>
+<li><strong>Complex features:</strong> Claude Code for anything the no-code tools can't handle</li>
+</ul>
+
+<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
+<h4>📋 Validated Micro-SaaS Gaps (Q4 2026)</h4>
+<ul class="mt-2 space-y-1 text-sm">
+<li>AI Google Review responder — drafts responses for owner approval</li>
+<li>Meeting notes → Notion/Slack with action item extraction</li>
+<li>Content repurposer: YouTube transcript → blog + social posts</li>
+<li>AI proposal generator for specific freelance niches</li>
+<li>Job description AI scorer — "How AI-proof is this role?"</li>
+</ul>
 </div>`
       }
     ]
@@ -1174,835 +843,579 @@ Monthly Revenue
   {
     id: 6,
     title: "Mastering Claude Code",
-    description: "Deep dive into Claude Code — Anthropic's most powerful coding agent — and how to use it to build real products without being a developer.",
-    outcome: "Students can use Claude Code to build, iterate, and deploy real software products.",
+    description: "Build real products using Claude Code — Anthropic's terminal-based coding agent — without being a developer.",
+    outcome: "Students have built and deployed at least one working product using Claude Code.",
     icon: "Terminal",
     lessons: [
       {
         id: 1,
-        title: "What Is Claude Code?",
-        description: "Understanding Anthropic's terminal-based coding agent and why it stands out",
+        title: "What Claude Code Is and Why It's Different",
+        description: "Understanding the tool that's changing how software gets built",
         duration: "15 min",
-        content: `<h2>Claude Code: AI That Builds, Not Just Suggests</h2>
-<p>Claude Code is Anthropic's command-line AI coding agent. Unlike Cursor or Windsurf (code editors), Claude Code lives in your terminal and operates at a deeper level — understanding your entire project, running commands, editing multiple files, and reasoning about complex problems.</p>
+        content: `<h2>Claude Code: An Agent, Not a Chat Window</h2>
+<p>Claude Code is not the same as Claude.ai — that's a chat interface. Claude Code lives in your terminal and operates at a fundamentally different level. It reads your entire project, runs commands, edits files across multiple folders, installs packages, runs tests, and commits changes — all autonomously.</p>
 
-<h3>Why Claude Code Stands Out</h3>
-<p>Across developer communities in 2026, Claude Code is consistently described as the most capable model for deep reasoning, debugging, and architectural changes. When other tools fail on hard problems — Claude Code is where developers escalate.</p>
+<h3>Why Developers Reach for It</h3>
+<p>Across developer communities, Claude Code is consistently described as the model to escalate to when Cursor and Codex fail on hard problems. It doesn't just generate code — it reasons about your architecture, understands your constraints, and explains what it did and why.</p>
 
+<h3>What It Does That Others Don't</h3>
 <ul>
-<li><strong>Deep reasoning:</strong> Understands your whole codebase, not just the current file</li>
-<li><strong>Autonomous action:</strong> Runs tests, installs packages, debugs errors, iterates — unsupervised</li>
-<li><strong>Hooks system:</strong> 27 hook events to customise behaviour at every step</li>
-<li><strong>Skills system:</strong> Extend capabilities with pre-built skill files</li>
-<li><strong>MCP support:</strong> Connect to databases, APIs, and web services</li>
+<li><strong>Whole-codebase understanding:</strong> not just the current file — the entire project</li>
+<li><strong>Autonomous execution:</strong> runs terminal commands, installs dependencies, runs tests</li>
+<li><strong>CLAUDE.md:</strong> a project briefing file it reads every session — eliminates re-explaining</li>
+<li><strong>Skills system:</strong> extend capabilities with pre-built instruction files</li>
+<li><strong>MCP support:</strong> connect to databases, APIs and web services as tools</li>
 </ul>
 
-<h3>Quick Comparison</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Tool</th><th class="pb-2">Interface</th><th class="pb-2">Best For</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Claude Code</td><td>Terminal</td><td>Hard problems, deep reasoning, full autonomy</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Cursor</td><td>IDE (VS Code fork)</td><td>Daily coding, visual editing</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Codex</td><td>Cloud agent</td><td>Parallel tasks, GitHub integration</td></tr>
-<tr><td class="py-2">Bolt.new</td><td>Browser</td><td>Building from scratch without code</td></tr>
-</table>`
+<h3>Cost Reality</h3>
+<p>Claude Code uses your Anthropic API key and charges per token. A typical session costs £0.50–3.00 depending on project size. Set a budget alert at console.anthropic.com. Start with £20 in credits.</p>
+
+<h3>Who This Module Is For</h3>
+<p>You don't need to be a developer. You need to be able to describe what you want precisely, review the output critically, and iterate. That's a communication skill — and it's learnable.</p>`
       },
       {
         id: 2,
-        title: "Installing and Setting Up Claude Code",
-        description: "Get Claude Code running on your Mac or PC in 10 minutes",
+        title: "Installing Claude Code and Your First Session",
+        description: "From zero to running in 15 minutes",
         duration: "15 min",
-        content: `<h2>Installation Guide</h2>
-<p>Claude Code is a Node.js CLI tool. You need Node.js installed first, then it's a single command.</p>
+        content: `<h2>Installation (Mac, Windows, Linux)</h2>
 
-<h3>Step 1: Install Node.js</h3>
+<h3>Prerequisites</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-# Mac (with Homebrew — install from brew.sh first)
+# Mac: install Homebrew first (brew.sh), then:
 brew install node
 
-# Windows: download LTS installer from nodejs.org
+# Windows: download Node.js LTS from nodejs.org
 
-# Verify installation
-node --version  # Should show v18 or higher
+# Verify:
+node --version  # should show v18 or higher
 </pre>
 
-<h3>Step 2: Install Claude Code</h3>
+<h3>Install Claude Code</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">npm install -g @anthropic-ai/claude-code</pre>
 
-<h3>Step 3: Get an API Key</h3>
+<h3>Get an API Key</h3>
 <ol>
-<li>Go to console.anthropic.com and create an account</li>
-<li>Go to "API Keys" and create a new key</li>
-<li>Add credits to your account (start with £10–20)</li>
-<li>Copy the key — you'll only see it once</li>
+<li>Go to console.anthropic.com → create account</li>
+<li>Go to API Keys → create new key</li>
+<li>Add credits ($20 to start)</li>
+<li>Copy the key — only shown once</li>
 </ol>
 
-<h3>Step 4: Start Claude Code</h3>
+<h3>Start Your First Session</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
 cd ~/path/to/your/project
 claude
 </pre>
-<p>First run opens a browser to authenticate. After that, it starts directly.</p>
+<p>First run opens a browser to authenticate. After that it starts directly. Try:</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+> Look at this project and explain what it does in plain English
+> Add a dark mode toggle to the header
+> Find the bug causing users to get logged out and fix it
+</pre>
 
 <h3>Key Commands</h3>
 <ul>
-<li><strong>/help</strong> — See all available commands</li>
-<li><strong>/clear</strong> — Clear conversation history</li>
-<li><strong>/model</strong> — Switch between Claude models</li>
-<li><strong>Ctrl+C</strong> — Stop the current action</li>
-</ul>
-
-<div class="bg-yellow-900/30 p-4 rounded-lg mt-4">
-<h4>⚠️ Cost Management</h4>
-<p>A typical session costs £0.50–3.00 depending on project size. Set a spending limit in console.anthropic.com to prevent surprises.</p>
-</div>`
+<li><strong>/help</strong> — all available commands</li>
+<li><strong>/clear</strong> — clear conversation history and start fresh</li>
+<li><strong>Ctrl+C</strong> — stop the current action</li>
+</ul>`
       },
       {
         id: 3,
-        title: "Using Claude Code Effectively",
-        description: "Techniques and patterns for getting consistently great results",
-        duration: "20 min",
-        content: `<h2>Directing Claude Code Like a Pro</h2>
-<p>Claude Code is powerful but there's a skill to directing it well. Here's what separates people who get great results from those who get frustrating ones.</p>
+        title: "The CLAUDE.md File — Your Permanent Project Briefing",
+        description: "The single highest-leverage thing you can do in Claude Code",
+        duration: "15 min",
+        content: `<h2>Never Re-Explain Your Project Again</h2>
+<p>CLAUDE.md is a markdown file in your project root that Claude Code reads at the start of every session. It's the difference between Claude Code knowing your project and starting from scratch each time.</p>
 
-<h3>Be Specific — Always</h3>
-<div class="bg-red-900/30 p-4 rounded-lg mb-4">
-<p><strong>❌ Vague:</strong> "Make the app better"</p>
-</div>
-<div class="bg-green-900/30 p-4 rounded-lg">
-<p><strong>✅ Specific:</strong> "The login page at app/login/page.tsx takes 3 seconds to load on mobile. Profile the component, identify what's causing the delay, and fix it. Don't change the visual design."</p>
-</div>
-
-<h3>Use CLAUDE.md for Persistent Context</h3>
-<p>Create a CLAUDE.md file in your project root — Claude Code reads this at the start of every session:</p>
+<h3>What to Put In It</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-# Project: My App Name
+# Project: [Your App Name]
+
+## What This Is
+[One paragraph description of the product and who it's for]
 
 ## Tech Stack
 - Next.js 14, TypeScript, Tailwind CSS
 - Prisma + PostgreSQL (Neon hosted)
 - NextAuth with Google OAuth
 - Stripe for payments
+- Deployed on Netlify
+
+## Key Files
+- lib/course-config.ts — all pricing and product config
+- lib/course-data.ts — all curriculum content
+- app/api/ — all API routes (all must be force-dynamic)
+- components/ — reusable UI components
 
 ## Rules
-- Never break existing auth flows
-- All API routes must have: export const dynamic = 'force-dynamic'
-- Always maintain TypeScript types
+- Never break existing authentication flows
+- All API routes must export: const dynamic = 'force-dynamic'
+- Always maintain TypeScript types strictly
 - Test changes before marking complete
+- Commit with descriptive messages after each significant change
+
+## Current Status
+[What's working, what's in progress, known issues]
 </pre>
 
-<h3>The Iterative Development Pattern</h3>
-<ol>
-<li>Describe the task precisely with constraints</li>
-<li>Ask Claude Code to explain its plan first: "Plan this before acting"</li>
-<li>Review the plan — correct anything before it executes</li>
-<li>Let it execute, review the changes</li>
-<li>Test manually, then: "Commit these changes with a descriptive message"</li>
-</ol>
+<h3>Keeping It Updated</h3>
+<p>Update CLAUDE.md whenever something significant changes — new dependency, new route, new database model, architectural decision. Treat it like a living document that a new team member would read on day one.</p>
 
-<h3>Tips for Non-Developers</h3>
-<ul>
-<li>Ask for explanations: "Explain what you just did in plain English"</li>
-<li>Test everything: "How do I test that this works?"</li>
-<li>Commit often: creates restore points if something breaks</li>
-<li>One thing at a time: small, reviewable steps are safer than big rewrites</li>
-</ul>`
+<h3>The Result</h3>
+<p>With a good CLAUDE.md, you can open Claude Code in any project and immediately say "Add a progress bar to the lesson page" without any preamble. Claude Code already knows the stack, the rules, and the context.</p>`
       },
       {
         id: 4,
-        title: "Building Real Projects with Claude Code",
+        title: "Building Real Projects With Claude Code",
         description: "Practical walkthroughs for shipping sellable products",
         duration: "25 min",
-        content: `<h2>From Zero to Shipped</h2>
-<p>Three practical project walkthroughs using Claude Code — the kind of things you can build and sell.</p>
+        content: `<h2>From Description to Deployed</h2>
+<p>Three real project walkthroughs. The pattern is the same each time: be specific, constrain the scope, review the output, commit, repeat.</p>
 
 <h3>Project 1: A Niche AI SaaS Tool</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-> Create a new Next.js 14 project with TypeScript,
-  Tailwind, and shadcn/ui. Call it "review-responder".
+Session 1 — Scaffold:
+"Create a new Next.js 14 project with TypeScript, 
+Tailwind and shadcn/ui. Call it 'review-responder'."
 
-> Build a single-page app where users paste a Google review
-  and click "Generate Response". Call the Anthropic API to
-  generate a professional, personalised response.
-  Clean dark design.
+Session 2 — Core feature:
+"Build a single-page app where users paste a Google review
+and click Generate Response. Call the Anthropic API 
+(Claude Sonnet 5) to generate a professional personalised
+response. Clean dark design."
 
-> Add NextAuth with Google sign-in.
-  Add Stripe Checkout. Users get 5 free responses,
-  then must subscribe for £9/month.
+Session 3 — Auth and payments:
+"Add NextAuth with Google sign-in. Add Stripe Checkout.
+Users get 5 free responses then must subscribe for £9/month."
 
-> Set up for Vercel deployment.
-  List all environment variables I need to configure.
+Session 4 — Deploy:
+"Set up for Netlify deployment. Create netlify.toml.
+List all environment variables I need to configure."
 </pre>
 
 <h3>Project 2: Add a Feature to an Existing App</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-> This is a Next.js course platform with Prisma and NextAuth.
-  Users complete lessons tracked in LessonProgress table.
+"This is a Next.js course platform with Prisma and NextAuth.
+Users complete lessons tracked in LessonProgress table.
 
-  Add a progress overview to the dashboard showing:
-  - Total lessons completed / total lessons
-  - Progress percentage per module as a visual bar
-  - "Continue where you left off" button
+Add a dashboard section showing:
+- Total lessons completed / total
+- Per-module progress as a visual bar
+- Continue where you left off button
 
-  Match the existing dark design. Don't modify the schema.
+Match the existing dark design. Don't modify the database schema."
 </pre>
 
-<h3>Project 3: Debug a Problem</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-> Users report they can't check out — they click the purchase
-  button and nothing happens.
-
-  Check the checkout flow starting at app/api/checkout/route.ts.
-  Identify what's failing and fix it.
-  Explain what the bug was and how you fixed it.
-</pre>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 The Non-Developer Advantage</h4>
-<p>You don't need to understand every line of code. You need to understand what you want to build and how to describe it precisely. That's a communication skill — and it compounds fast.</p>
-</div>`
+<h3>Tips for Non-Developers</h3>
+<ul>
+<li><strong>Ask for explanations:</strong> "Explain what you just did in plain English" after every change</li>
+<li><strong>Test everything:</strong> "How do I test that this works?" after every change</li>
+<li><strong>Commit often:</strong> "Commit the current state with a descriptive message" — creates restore points</li>
+<li><strong>One thing at a time:</strong> small, reviewable steps beat big rewrites</li>
+<li><strong>When something breaks:</strong> "Something broke. Here's the error: [paste error]. What happened and how do I fix it?"</li>
+</ul>`
       },
       {
         id: 5,
-        title: "Claude Code Dispatch and Parallel Agents",
-        description: "Running multiple Claude Code agents simultaneously for complex projects",
+        title: "Claude Code Dispatch — Parallel Agents for Complex Projects",
+        description: "Run multiple Claude Code agents simultaneously when one agent isn't enough",
         duration: "18 min",
-        content: `<h2>Claude Code Dispatch: Multiple Agents, One Goal</h2>
-<p>Claude Code Dispatch lets you run multiple Claude Code agents in parallel — one on the frontend, one on the backend, one writing tests — all at the same time. Available on Claude Max and Team plans.</p>
+        content: `<h2>When One Agent Isn't Enough</h2>
+<p>For larger projects, Claude Code Dispatch lets you run multiple agents in parallel — one on the frontend, one on the backend, one writing tests — all simultaneously. Available on Claude Max and Team plans.</p>
 
-<h3>Example: Building a Feature in Parallel</h3>
+<h3>When to Use Dispatch</h3>
+<ul>
+<li>Tasks are independent of each other (don't depend on each other's output)</li>
+<li>You want to explore multiple solutions simultaneously</li>
+<li>Running tests or checks in the background while working on something else</li>
+</ul>
+
+<h3>Example Parallel Session</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
 Agent 1 — Frontend:
-"Add a progress bar to the lesson page showing module completion.
-File: app/course/module/[moduleId]/lesson/page.tsx
+"Add a progress bar to app/course/module/[moduleId]/page.tsx
+showing lessons completed in the current module.
 Match existing dark design. Don't change other components."
 
 Agent 2 — API:
-"Add GET endpoint at /api/user/module-progress returning
-completion percentage for each module for current user.
-Use existing LessonProgress model in Prisma."
+"Add GET /api/user/module-progress returning completion
+percentage per module for the current user.
+Use existing LessonProgress model."
 
 Agent 3 — Tests:
-"Write Jest tests for all API routes in app/api/user/
+"Write Jest tests for all routes in app/api/user/.
 Cover authenticated, unauthenticated, and edge cases."
 </pre>
-<p>All three run simultaneously. You review outputs and merge what's good.</p>
+<p>All three run simultaneously. You review and merge what's good.</p>
 
-<h3>Cowork Dispatch vs Code Dispatch — Cleared Up</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">Task</th><th class="pb-2">Which Dispatch</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Build a feature in my app</td><td>Claude Code Dispatch</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Organise my Downloads folder</td><td>Cowork Dispatch</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Write tests for API routes</td><td>Claude Code Dispatch</td></tr>
-<tr><td class="py-2">Send me weekly email summaries</td><td>Cowork Dispatch</td></tr>
-</table>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 Simple Rule</h4>
-<p>Code tasks = Claude Code Dispatch. File, email, productivity tasks = Cowork Dispatch. They complement each other perfectly.</p>
-</div>`
+<h3>Cowork Dispatch vs Code Dispatch</h3>
+<p>These are two different things that share a name. <strong>Claude Code Dispatch</strong> = parallel coding agents. <strong>Claude Cowork Dispatch</strong> = desktop productivity agent controlled from your phone. Module 7 covers Cowork Dispatch in detail.</p>`
       }
     ]
   },
   {
     id: 7,
-    title: "OpenClaw, Dispatch and Desktop Agents",
-    description: "Master the two leading desktop AI agent platforms and the tools that make them genuinely useful.",
-    outcome: "Students can set up and use Claude Dispatch and/or OpenClaw as a real productivity assistant.",
+    title: "Desktop Agents — OpenClaw and Claude Dispatch",
+    description: "Set up a persistent AI agent that works on your computer while you focus on other things.",
+    outcome: "Students have a working desktop agent setup completing at least one recurring task automatically.",
     icon: "Settings",
     lessons: [
       {
         id: 1,
-        title: "Introduction to OpenClaw",
-        description: "Understanding the open source desktop agent taking the world by storm",
+        title: "What Desktop Agents Actually Are in 2027",
+        description: "Beyond the hype — what works, what doesn't, and what's worth setting up",
         duration: "15 min",
-        content: `<h2>OpenClaw: 247,000 Stars and Growing</h2>
-<p>OpenClaw is the open source desktop agent that exploded in popularity through 2025–2026. By March 2026 it had 247,000 GitHub stars — one of the fastest-growing open source projects ever. Its creator joined OpenAI in February 2026 and transitioned it to an open-source foundation.</p>
+        content: `<h2>Persistent Agents: The Real 2027 Shift</h2>
+<p>In 2024, AI was reactive — you opened a window and asked a question. Desktop agents are different: they stay active, accept goals, execute them using your computer's apps and files, and return results — while you do something else.</p>
 
-<h3>Why OpenClaw Is Different</h3>
+<h3>What They Can Reliably Do Today</h3>
 <ul>
-<li><strong>Model-agnostic:</strong> Use Claude, GPT-4, DeepSeek, Gemini, or local models via Ollama</li>
-<li><strong>Your messaging apps:</strong> Control it via Telegram, WhatsApp, Discord, Slack, iMessage</li>
-<li><strong>Fully local:</strong> Everything stays on your machine</li>
-<li><strong>Skills system:</strong> Extend capabilities with SKILL.md files</li>
-<li><strong>Free to run:</strong> Only pay for API usage — no subscription required</li>
+<li>Organise and rename files according to rules</li>
+<li>Summarise documents and folders of PDFs</li>
+<li>Draft and queue emails based on a briefing</li>
+<li>Pull reports from connected apps (Gmail, Notion, Google Drive)</li>
+<li>Run scheduled recurring tasks (weekly digest, daily briefing)</li>
 </ul>
 
-<h3>Before You Start</h3>
-<p>Make sure you have OpenClaw installed. In Terminal:</p>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-npm install -g openclaw
-cd $HOME
-openclaw init
-# Follow setup wizard — connect your Telegram or messaging app
-# Add your API keys (Anthropic, OpenAI, etc.)
-</pre>
+<h3>What Still Fails Often</h3>
+<ul>
+<li>Complex multi-app workflows touching 4+ different systems</li>
+<li>Tasks requiring judgment calls on ambiguous inputs</li>
+<li>Anything involving apps without good API access</li>
+</ul>
 
-<h3>Using Claude Code to Build OpenClaw Systems</h3>
-<p>A key technique used by power users: use Claude Code to build and configure your OpenClaw setup. Claude Code is better for architecture work — it builds precisely without burning tokens on faulty setups. OpenClaw then runs the systems Claude Code built.</p>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 Installing ClawHub (Skill Registry)</h4>
-<pre class="bg-gray-900 p-3 rounded text-sm">npm i -g clawhub</pre>
-<p class="mt-2 text-sm text-yellow-400">⚠️ Warning: Stick to official skills and well-known community authors. There have been reports of malware from unknown contributors.</p>
+<div class="bg-yellow-900/30 p-4 rounded-lg mt-4">
+<h4>⚠️ Honest Expectations</h4>
+<p>Claude Dispatch has roughly a 50–70% success rate on complex multi-app tasks. This is a research preview. For simple, well-defined tasks — file management, document summaries, scheduled reports — it's reliable. Use it for tasks where a failure means a missed email, not a missed payment.</p>
 </div>`
       },
       {
         id: 2,
-        title: "OpenClaw vs Dispatch: Which Is Right For You?",
-        description: "An honest comparison of the two leading desktop agent platforms",
-        duration: "15 min",
-        content: `<h2>Two Great Platforms. Different Audiences.</h2>
-<p>Claude Cowork Dispatch launched March 17, 2026. OpenClaw has been building momentum since 2024. Here's the honest comparison.</p>
+        title: "Claude Cowork Dispatch — Setup and Best Uses",
+        description: "The polished commercial option — phone-controlled, 38+ app connectors",
+        duration: "20 min",
+        content: `<h2>Claude Cowork Dispatch</h2>
+<p>Launched March 2026, Dispatch is Anthropic's commercial desktop agent. It's the most polished option available and requires the Claude Max plan ($100–200/month).</p>
 
-<h3>Claude Cowork Dispatch</h3>
+<h3>Setup (10 minutes)</h3>
+<ol>
+<li>Install the Claude desktop app at claude.ai/download</li>
+<li>Sign in with your Max account</li>
+<li>Open the app — look for the Dispatch tab</li>
+<li>Scan the QR code with your phone's Claude app to pair them</li>
+</ol>
+
+<h3>38+ Built-In Connectors</h3>
+<p>Gmail, Slack, Notion, Google Drive, Google Calendar, Google Docs, Todoist, Linear — all connect in a few clicks, no API keys or configuration required.</p>
+
+<h3>Tasks Dispatch Does Well</h3>
 <ul>
-<li><strong>Interface:</strong> Desktop GUI app + phone control via QR code</li>
-<li><strong>Purpose:</strong> Persistent desktop agent for productivity tasks</li>
-<li><strong>38+ built-in connectors:</strong> Gmail, Slack, Notion, Google Drive, Calendar, Todoist</li>
-<li><strong>Security:</strong> Local sandboxed execution — files never leave your machine</li>
-<li><strong>Success rate:</strong> ~50% on complex multi-app tasks (honest research preview figures)</li>
-<li><strong>Cost:</strong> Requires Claude Max plan ($100–200/month)</li>
-<li><strong>Best for:</strong> Professionals who want something polished out of the box</li>
+<li>"Summarise all PDFs in my Downloads folder from this month and email me the key points"</li>
+<li>"Every Monday morning, draft a summary of my unread emails from the previous week"</li>
+<li>"Find all calendar events with [person's name] and create a prep note document for each"</li>
+<li>"Organise my Downloads folder — move documents to Documents, images to Pictures, videos to Movies"</li>
 </ul>
 
-<h3>OpenClaw</h3>
+<h3>Tasks to Avoid</h3>
 <ul>
-<li><strong>Interface:</strong> Your existing messaging apps (Telegram, WhatsApp, Discord)</li>
-<li><strong>Purpose:</strong> Fully customisable local AI agent</li>
-<li><strong>Model-agnostic:</strong> Claude, GPT, DeepSeek, Gemini, local models</li>
-<li><strong>Skills system:</strong> Add capabilities via SKILL.md files</li>
-<li><strong>Cost:</strong> Free to run — only pay for API usage</li>
-<li><strong>Best for:</strong> Power users who want maximum control and flexibility</li>
-</ul>
-
-<h3>Which Should You Choose?</h3>
-<table class="w-full text-left mt-4">
-<tr class="border-b border-gray-700"><th class="pb-2">You want...</th><th class="pb-2">Use</th></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Something polished that works out of the box</td><td>Claude Dispatch</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Full control and flexibility</td><td>OpenClaw</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Phone control of your desktop</td><td>Claude Dispatch</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Control via Telegram/WhatsApp</td><td>OpenClaw</td></tr>
-<tr class="border-b border-gray-700"><td class="py-2">Multiple AI models</td><td>OpenClaw</td></tr>
-<tr><td class="py-2">Already on Claude Max plan</td><td>Claude Dispatch (it's included)</td></tr>
-</table>`
+<li>Anything requiring browser navigation to sites without built-in connectors</li>
+<li>Multi-step tasks touching more than 3 different apps</li>
+<li>Anything you'd be upset about if it went wrong unsupervised</li>
+</ul>`
       },
       {
         id: 3,
-        title: "How Skills Work in OpenClaw",
-        description: "Understanding the skill system and ClawHub registry",
-        duration: "10 min",
-        content: `<h2>Adding Capabilities to OpenClaw</h2>
-<p>Skills are how OpenClaw learns new capabilities. There are two ways to add them.</p>
+        title: "OpenClaw — The Open Source Alternative",
+        description: "Maximum flexibility, model-agnostic, controlled via Telegram",
+        duration: "25 min",
+        content: `<h2>OpenClaw: 247,000 GitHub Stars and Growing</h2>
+<p>OpenClaw is the open source desktop agent that went viral in 2025–2026. It's model-agnostic (use Claude, GPT-6, Gemini, or local models), controlled via Telegram/WhatsApp/Discord, and free to run beyond API costs.</p>
 
-<h3>Method 1: Manually</h3>
-<p>Create a SKILL.md file with instructions for using a specific tool. OpenClaw reads this file whenever it needs to use that tool. You can use Claude Code to build these out automatically.</p>
-
-<h3>Method 2: ClawHub Registry</h3>
-<p>OpenClaw's skill registry — install pre-built skills from verified authors. Some come from the OpenClaw team, some are official skills from tool authors, some are community-contributed.</p>
-
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-# Install a skill from ClawHub
-clawhub install agentmail
-
-# List installed skills
-clawhub list
-
-# View skill documentation
-clawhub docs agentmail
-</pre>
-
-<h3>Skill Priority</h3>
-<p>Skills are loaded in this order (highest priority first):</p>
-<ol>
-<li>Your workspace skills (project-specific)</li>
-<li>Your global skills (installed for all projects)</li>
-<li>ClawHub registry skills</li>
-</ol>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 Using Claude Code to Build Skills</h4>
-<p>The most efficient way to add capabilities: paste this into Claude Code in your OpenClaw directory:</p>
-<pre class="bg-gray-900 p-3 rounded text-sm mt-2">
-Create a SKILL.md file that teaches OpenClaw how to 
-use [TOOL NAME]. Include: what the tool does, how to 
-authenticate, the key API endpoints or commands, 
-common use cases with example invocations, and 
-error handling guidance.
-</pre>
-</div>`
-      },
-      {
-        id: 4,
-        title: "Tool 1: AgentMail",
-        description: "Give your OpenClaw agent its own dedicated email inbox",
-        duration: "20 min",
-        content: `<h2>AgentMail: Email Built for AI Agents</h2>
-<p>AgentMail (agentmail.to) is a Y Combinator-backed startup that built an email platform specifically for AI agents. Your agent gets its own real email inbox — not a Gmail account with all the associated banning risks.</p>
-
-<h3>Why Not Just Use Gmail?</h3>
-<p>Gmail bans accounts used for automated sending at scale. AgentMail is built from the ground up for agent use: programmatic send/receive, webhooks, no account banning risk, designed for API access.</p>
-
-<h3>Setup in 3 Steps</h3>
-<ol>
-<li>Go to agentmail.to → sign up with Google (free, up to 3 inboxes)</li>
-<li>Create your first inbox — your address will be yourname@agentmail.to</li>
-<li>Go to API keys → generate your first key</li>
-</ol>
-
-<h3>Install with Claude Code</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Set up AgentMail for my OpenClaw agent.
-
-Skill docs at: https://clawhub.ai/adboio/agentmail
-
-Make sure to:
-1. Install the AgentMail skill via ClawHub if not installed
-2. Configure AGENTMAIL_API_KEY in openclaw.json
-   My key is: [YOUR_KEY]
-3. My agent's inbox is: [YOUR_INBOX]
-4. Install Python SDK: pip install agentmail python-dotenv
-5. Test sending and receiving an email
-</pre>
-
-<h3>Use Cases</h3>
+<h3>Why Choose OpenClaw Over Dispatch</h3>
 <ul>
-<li>Forward newsletters to your agent for daily summaries</li>
-<li>Set up a support inbox for first-line AI responses</li>
-<li>Process incoming invoices and extract key details automatically</li>
-<li>Build a daily email digest delivered to Telegram</li>
-</ul>`,
-        resources: [
-          { title: "AgentMail Website", url: "https://agentmail.to" },
-          { title: "AgentMail Skill on ClawHub", url: "https://clawhub.ai/adboio/agentmail" }
-        ]
-      },
-      {
-        id: 5,
-        title: "Tool 2: QMD Memory System",
-        description: "The single biggest upgrade you can make to OpenClaw — semantic memory",
-        duration: "20 min",
-        content: `<h2>QMD: The Single Biggest OpenClaw Upgrade</h2>
-<p>Out of the box, OpenClaw uses keyword-based search to find past memories. The problem: if you ask "what did we work on with that client last month?" but the actual conversation used different words — keyword search fails. QMD fixes this.</p>
-
-<h3>What QMD Is</h3>
-<p>QMD is an open-source local search engine built by Tobi Lutke (CEO of Shopify). It combines three search strategies:</p>
-<ul>
-<li><strong>Keyword search:</strong> Traditional matching (like OpenClaw's default)</li>
-<li><strong>Vector semantic search:</strong> Understands meaning, not just exact words</li>
-<li><strong>LLM re-ranker:</strong> Scores results by actual relevance to your query</li>
+<li>You want to use multiple AI models in the same agent</li>
+<li>You're comfortable with terminal setup</li>
+<li>You want full customisation via the Skills system</li>
+<li>You don't want to pay for a Max plan</li>
+<li>You want to control everything from Telegram</li>
 </ul>
-<p>It all runs on your machine — no API keys, no cloud, no data leaving your computer.</p>
 
-<h3>Setup with Claude Code</h3>
+<h3>Basic Setup</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Set up QMD as the memory backend for my OpenClaw agent.
-Follow: https://docs.openclaw.ai/concepts/memory#qmd-backend-experimental
+npm install -g openclaw
+cd $HOME
+openclaw init
+# Follow wizard — connect Telegram and add API keys
+</pre>
 
-Make sure to:
-1. Install the QMD CLI
-2. Install SQLite with extension support if needed
-   (macOS: brew install sqlite)
-3. Configure memory.backend = "qmd" in openclaw.json
-4. Add my workspace memory files as a QMD collection
-5. Run initial embed so models are downloaded
-6. Verify with a test query
+<h3>The Three Essential Upgrades</h3>
+
+<h4>1. QMD Memory (most important)</h4>
+<p>OpenClaw's default memory uses keyword search — it fails when you ask about something using different words than you used originally. QMD adds semantic search (understands meaning, not just keywords) and runs entirely on your machine.</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+# Follow: https://docs.openclaw.ai/concepts/memory#qmd-backend-experimental
+# macOS prerequisite:
+brew install sqlite
+# Then configure memory.backend = "qmd" in openclaw.json
+</pre>
+
+<h4>2. AgentMail</h4>
+<p>Your agent gets a real email inbox (yourname@agentmail.to) for sending and receiving. Gmail bans automated sending at scale — AgentMail is built for agent use.</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+# Sign up at agentmail.to (free, up to 3 inboxes)
+npm i -g clawhub
+clawhub install agentmail
+</pre>
+
+<h4>3. Agent-Browser</h4>
+<p>Gives your agent a real Chromium browser — fill forms, navigate pages, interact with JavaScript. Uses 93% fewer tokens than Playwright.</p>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+npm install -g agent-browser
+# Follow skill setup: https://github.com/vercel-labs/agent-browser
 </pre>
 
 <div class="bg-green-900/30 p-4 rounded-lg mt-6">
 <h4>💡 If You Pick Just One Upgrade</h4>
-<p>QMD is it. Your agent goes from forgetting things to genuinely remembering them. The quality-of-life improvement is immediate and dramatic.</p>
-</div>`,
-        resources: [
-          { title: "QMD GitHub Repository", url: "https://github.com/tobi/qmd" },
-          { title: "OpenClaw Memory Docs", url: "https://docs.openclaw.ai/concepts/memory#qmd-backend-experimental" }
-        ]
-      },
-      {
-        id: 6,
-        title: "Tool 3: Agent-Browser",
-        description: "Give your agent a 93% more token-efficient web browser",
-        duration: "20 min",
-        content: `<h2>Agent-Browser: Browse Smarter, Spend Less</h2>
-<p>Agent-Browser is a CLI tool from Vercel Labs giving your AI agent a real Chromium browser — not just HTML scraping. It can navigate pages, click, fill forms, take screenshots, and interact with JavaScript-heavy sites. And it does all of this with 93% fewer tokens than Playwright.</p>
-
-<h3>Installation</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">npm install -g agent-browser</pre>
-
-<h3>Setup with Claude Code</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Install the agent-browser skill for my OpenClaw agent.
-
-Skill docs at:
-https://github.com/vercel-labs/agent-browser/tree/main/skills/agent-browser
-
-OpenClaw skills docs:
-https://docs.openclaw.ai/tools/skills
-
-Make sure to:
-1. Install the skill into the OpenClaw skills directory
-2. Include the SKILL.md and reference docs
-3. Verify the skill shows up as eligible
-4. Configure as default browser for all web access tasks
-</pre>
-
-<h3>Advanced Use Cases</h3>
-<ul>
-<li><strong>No-API workflows:</strong> Interact with sites that don't have APIs — fill forms, export reports, change settings</li>
-<li><strong>Self-verifying code:</strong> Your agent can open preview URLs and verify its own fixes worked</li>
-<li><strong>Price monitoring:</strong> Track prices, product availability, competitor changes</li>
-<li><strong>Desktop app control:</strong> New skill for controlling Slack, Notion, VS Code via Electron</li>
-</ul>`,
-        resources: [
-          { title: "Agent-Browser GitHub", url: "https://github.com/vercel-labs/agent-browser" },
-          { title: "OpenClaw Skills Docs", url: "https://docs.openclaw.ai/tools/skills" }
-        ]
-      },
-      {
-        id: 7,
-        title: "Putting It All Together",
-        description: "Your complete desktop agent setup and recommended implementation order",
-        duration: "10 min",
-        content: `<h2>Your Complete Agent Setup</h2>
-
-<div class="grid gap-4 my-6">
-<div class="bg-gray-800 p-4 rounded-lg">
-<h4 class="text-green-400">🖥️ Claude Cowork Dispatch</h4>
-<p class="text-sm mt-1">Persistent desktop agent. Phone control. 38+ connectors. Polished GUI. Best for productivity tasks, files, and scheduling.</p>
-</div>
-<div class="bg-gray-800 p-4 rounded-lg">
-<h4 class="text-green-400">🦾 OpenClaw</h4>
-<p class="text-sm mt-1">Open source, model-agnostic. Control via Telegram. Fully customisable skills system. Best for power users.</p>
-</div>
-<div class="bg-gray-800 p-4 rounded-lg">
-<h4 class="text-green-400">📧 AgentMail</h4>
-<p class="text-sm mt-1">Dedicated email inbox for your agent. No Gmail banning risk. Webhooks and full API access.</p>
-</div>
-<div class="bg-gray-800 p-4 rounded-lg">
-<h4 class="text-green-400">🧠 QMD Memory</h4>
-<p class="text-sm mt-1">Semantic search for agent memories. Understands meaning not just keywords. Runs entirely locally.</p>
-</div>
-<div class="bg-gray-800 p-4 rounded-lg">
-<h4 class="text-green-400">🌐 Agent-Browser</h4>
-<p class="text-sm mt-1">93% fewer tokens than Playwright. Full Chromium browser. Can control desktop apps.</p>
-</div>
-</div>
-
-<h3>Recommended Order</h3>
-<ol>
-<li><strong>Start with Claude Code</strong> (Module 6) — learn to build with AI first</li>
-<li><strong>Try Claude Dispatch</strong> — if on Max plan, experiment with phone-controlled tasks</li>
-<li><strong>Set up OpenClaw</strong> — for full control and model flexibility</li>
-<li><strong>Add QMD</strong> — highest-impact single upgrade</li>
-<li><strong>Add AgentMail + Agent-Browser</strong> — complete the setup</li>
-</ol>
-
-<div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>🎓 Next Up: Module 8</h4>
-<p>You now have everything you need to run AI agents for business. Module 8 covers something just as powerful — using all of this to automate your own life and personal productivity.</p>
+<p>QMD. It transforms OpenClaw from an agent that forgets to one that genuinely remembers context across sessions. Install this first.</p>
 </div>`
+      },
+      {
+        id: 4,
+        title: "OpenClaw vs Claude Dispatch — Which to Use",
+        description: "An honest comparison with clear recommendations",
+        duration: "12 min",
+        content: `<h2>Pick the Right Tool for Your Situation</h2>
+
+<h3>Side-by-Side</h3>
+<table class="w-full text-left mt-4">
+<tr class="border-b border-gray-700"><th class="pb-2"></th><th class="pb-2">Claude Dispatch</th><th class="pb-2">OpenClaw</th></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Setup time</td><td>10 minutes</td><td>2–4 hours (with upgrades)</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Interface</td><td>GUI app + phone</td><td>Telegram/WhatsApp/Discord</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">AI model</td><td>Claude only</td><td>Any model (Claude, GPT-6, Gemini, local)</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">Cost</td><td>Max plan ($100–200/month)</td><td>Free + API costs (~£10–30/month)</td></tr>
+<tr class="border-b border-gray-700"><td class="py-2">App connectors</td><td>38 built-in, no setup</td><td>Via skills (some setup required)</td></tr>
+<tr><td class="py-2">Best for</td><td>Non-technical users wanting something polished</td><td>Power users wanting full control</td></tr>
+</table>
+
+<h3>The Honest Answer</h3>
+<p><strong>Choose Dispatch if:</strong> you're already on Claude Max, you want something that works in 10 minutes, and you primarily work with documents, email, and productivity apps.</p>
+<p><strong>Choose OpenClaw if:</strong> you want to use multiple AI models, you're comfortable with terminal setup, and you want maximum control and customisation.</p>
+<p><strong>Use both if:</strong> Dispatch for quick phone-triggered tasks; OpenClaw for complex scheduled automations.</p>
+
+<h3>Neither Is Magic</h3>
+<p>Desktop agents in 2027 are genuinely useful for well-defined, recurring tasks. They are not reliable enough to run unsupervised on anything business-critical. Start with simple tasks, supervise the first 10 runs, then let them run autonomously once you trust the output.</p>`
       }
     ]
   },
   {
     id: 8,
-    title: "AI for Personal Productivity and Life Automation",
-    description: "Use AI agents to automate your own life — not just your work. Daily briefings, email management, research, scheduling, and more.",
-    outcome: "Students set up a personal AI system that saves them 2+ hours every day automatically.",
+    title: "Personal Productivity and Life Automation",
+    description: "Use AI to get time back — morning briefings, inbox management, personal research, recurring admin — all running without you.",
+    outcome: "Students have at least one personal AI system running and saving them real time every day.",
     icon: "Brain",
     lessons: [
       {
         id: 1,
-        title: "The Personal AI Operating System",
-        description: "How to think about AI as your personal life infrastructure",
+        title: "Your Personal AI Operating System",
+        description: "Moving from reactive to proactive AI use",
         duration: "15 min",
-        content: `<h2>Your Personal AI Operating System</h2>
-<p>Most people use AI reactively — they have a problem, they open ChatGPT, they ask a question. The people getting the most out of AI in 2026 have built a <strong>personal AI operating system</strong> — a set of agents, automations, and systems that run proactively in the background, handling recurring tasks before they even hit your inbox.</p>
+        content: `<h2>From Reactive to Proactive</h2>
+<p>Most people use AI reactively — they have a task, they open Claude, they ask a question. The people getting the most from AI in 2027 have built proactive systems: automations and agents that deliver information and complete tasks before they're asked.</p>
 
-<h3>The Three Layers</h3>
+<h3>Three Layers</h3>
 <ul>
-<li><strong>Layer 1 — Information:</strong> AI that reads, monitors, and summarises the world for you. News, emails, competitor activity, industry trends — all filtered and delivered in a daily briefing.</li>
-<li><strong>Layer 2 — Decisions:</strong> AI that handles routine decisions and drafts responses for your approval. Scheduling, email replies, task prioritisation.</li>
-<li><strong>Layer 3 — Execution:</strong> AI that actually does things. Files documents, sends emails, books meetings, creates reports — autonomously.</li>
+<li><strong>Layer 1 — Information:</strong> AI reads, filters, and summarises the world for you. News, emails, research — delivered as a daily briefing, not a firehose.</li>
+<li><strong>Layer 2 — Drafts:</strong> AI prepares outputs for your approval. Email replies, reports, proposals — you review and send, not write from scratch.</li>
+<li><strong>Layer 3 — Execution:</strong> AI takes actions without needing you to approve each one. File organisation, scheduled posts, recurring reports.</li>
 </ul>
 
-<h3>What This Looks Like in Practice</h3>
-<p>Every morning at 7am, before you've even looked at your phone:</p>
+<h3>What a Good Personal AI System Looks Like</h3>
+<p>Every morning, before you've opened your laptop:</p>
 <ul>
-<li>Your AI has scanned your inbox and flagged 3 emails that need your attention today</li>
-<li>A daily briefing has been created: top news in your industry, your calendar for the day, tasks due</li>
-<li>Your content pipeline has published last night's scheduled posts</li>
-<li>Any urgent Slack messages have been summarised and a draft response prepared</li>
+<li>Your inbox has been triaged — urgent items flagged, newsletters archived</li>
+<li>A daily briefing has been delivered: key emails, today's calendar, relevant news</li>
+<li>Your scheduled content has been published</li>
+<li>Any weekly reports have been drafted and sent</li>
 </ul>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 The Goal</h4>
-<p>You show up to your day already informed, already ahead, with your attention reserved only for decisions that actually require you. Everything else has been handled.</p>
-</div>`
+<p>You arrive at work already informed. Your attention is reserved for decisions that actually need you.</p>`
       },
       {
         id: 2,
-        title: "Your Morning AI Briefing",
-        description: "Build an automated daily briefing delivered to your phone every morning",
+        title: "Build Your Morning Briefing",
+        description: "An automated daily briefing delivered to your phone before you start work",
         duration: "25 min",
         content: `<h2>Wake Up Already Informed</h2>
-<p>A morning briefing automation is the single highest-ROI system you can build. It takes 2–3 hours to set up and saves you 30–60 minutes every single day forever.</p>
+<p>A morning briefing automation is the highest-ROI system most people can build. It takes 2–3 hours to set up and saves 30–60 minutes every day indefinitely.</p>
 
 <h3>What Your Briefing Should Cover</h3>
 <ul>
-<li><strong>Calendar:</strong> Today's meetings and appointments with prep notes</li>
-<li><strong>Priority emails:</strong> The 3–5 messages that need your attention today</li>
-<li><strong>Industry news:</strong> Top 5 developments in your field from the last 24 hours</li>
-<li><strong>Tasks due:</strong> What needs to be done today from your task manager</li>
-<li><strong>Weather:</strong> Quick check for the day</li>
+<li>Today's calendar — meetings and prep notes</li>
+<li>Top 3–5 emails needing attention today</li>
+<li>Key developments in your industry from the last 24 hours</li>
+<li>Any tasks due today (from Notion or Todoist)</li>
 </ul>
 
 <h3>Building It in Make (Step by Step)</h3>
 <ol>
-<li><strong>Schedule trigger:</strong> Every day at 6:30am</li>
+<li><strong>Schedule trigger:</strong> every weekday at 6:30am</li>
 <li><strong>Google Calendar:</strong> "List Events" — today's events</li>
-<li><strong>Gmail:</strong> "Search Emails" — unread emails from last 24 hours, sorted by importance</li>
-<li><strong>HTTP module:</strong> Search Google News RSS for "[your industry] news"</li>
-<li><strong>Claude:</strong> "You are my personal assistant. Here is my calendar: [calendar data]. Here are my unread emails: [emails]. Here is today's industry news: [news]. Create a concise morning briefing (under 300 words) covering: 1) Key meetings today with prep notes, 2) Emails needing my attention, 3) Top 3 industry news items, 4) My priority for today. Be direct and useful."</li>
-<li><strong>Output:</strong> Send to Telegram, email, or Slack — whichever you check first</li>
+<li><strong>Gmail:</strong> "Search Emails" — unread, last 24 hours</li>
+<li><strong>HTTP module:</strong> Google News RSS for your industry keywords</li>
+<li><strong>Claude prompt:</strong>
+<pre class="bg-gray-800 p-3 rounded text-sm mt-2 overflow-x-auto">
+You are my personal assistant. Create a concise morning 
+briefing (under 300 words) covering:
+1. Key meetings today with any relevant prep notes
+2. Emails needing my attention today (summarise each in one line)
+3. Top 3 industry news items worth knowing
+4. My single priority for today
+
+Calendar: [map calendar data]
+Emails: [map email data]
+News: [map news data]
+
+Be direct and practical. No filler.
+</pre>
+</li>
+<li><strong>Output:</strong> send to Telegram (if using OpenClaw), email, or Slack</li>
 </ol>
 
 <div class="bg-blue-900/30 p-4 rounded-lg mt-6">
-<h4>📋 Making It Better Over Time</h4>
-<ul class="mt-2 space-y-2">
-<li>Add a "Tasks Due Today" pull from Notion or Todoist</li>
-<li>Include a daily quote or reflection prompt</li>
-<li>Add competitor monitoring — track what your competitors publish</li>
-<li>Include a revenue snapshot if you have Stripe access via API</li>
+<h4>📋 Upgrade Ideas Once It's Running</h4>
+<ul class="mt-2 space-y-1 text-sm">
+<li>Add tasks due today from Notion or Todoist</li>
+<li>Add your Stripe revenue from yesterday</li>
+<li>Add competitor monitoring — what your competitors published</li>
+<li>Add a "one thing to move forward today" suggestion based on your goals</li>
 </ul>
 </div>`
       },
       {
         id: 3,
         title: "AI Email Management",
-        description: "Triage, draft, and manage your inbox with AI — never drown in email again",
-        duration: "22 min",
+        description: "Triage, draft, and stay on top of your inbox without it consuming your day",
+        duration: "20 min",
         content: `<h2>Inbox Zero Without the Work</h2>
-<p>The average professional spends 2.6 hours per day on email. AI can cut this to 30 minutes — or less.</p>
+<p>The average professional spends 2+ hours per day on email. With AI triage and drafting, this can become 30–45 minutes of focused review and decisions.</p>
 
-<h3>The Four Email Jobs AI Can Handle</h3>
+<h3>Four Things AI Handles</h3>
 
-<h4>1. Triage and Classification</h4>
-<p>AI reads every incoming email and classifies it: Urgent/Important/Newsletter/Spam. Urgent ones get flagged to you immediately. Newsletters get summarised weekly. Spam gets archived.</p>
+<h4>1. Classification</h4>
+<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
+Trigger: New email arrives
+Claude: "Classify as URGENT / IMPORTANT / NEWSLETTER / RECEIPT / OTHER.
+Subject: [subject] | From: [sender] | Preview: [snippet]"
+Route each category to the right label and action
+</pre>
 
 <h4>2. Draft Responses</h4>
-<p>For common email types (meeting requests, pricing enquiries, support questions), AI drafts a response. You review, edit if needed, and send — or just click send.</p>
+<p>For common email types (meeting requests, pricing enquiries, support), Claude drafts a response based on your previous replies and preferences. You review, edit if needed, send.</p>
 
 <h4>3. Meeting Scheduling</h4>
-<p>When someone emails asking to meet, AI checks your calendar, identifies available slots, and drafts a response with your Calendly link or specific times offered.</p>
+<p>When someone emails asking to meet, Claude drafts a reply offering two specific times from your calendar. You approve and send.</p>
 
 <h4>4. Follow-Up Reminders</h4>
-<p>AI tracks emails you've sent that haven't received responses. After 3 days, it drafts a polite follow-up for your approval.</p>
+<p>Emails you sent that haven't received a reply after 3 days get flagged. Claude drafts a polite follow-up for your approval.</p>
 
-<h3>Building Email Triage in Make</h3>
-<pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Trigger: New email arrives in Gmail
-
-Claude prompt:
-"Classify this email into exactly one category:
-URGENT (needs response today)
-IMPORTANT (needs response this week)
-NEWSLETTER (marketing/updates)
-RECEIPT (financial document)
-SPAM (junk)
-
-Email subject: {{subject}}
-Email from: {{from}}
-Email preview: {{snippet}}
-
-Reply with just the category word."
-
-Route:
-URGENT → Apply label "AI-Urgent", send Telegram alert
-IMPORTANT → Apply label "AI-Important"
-NEWSLETTER → Apply label "AI-Newsletter", archive
-RECEIPT → Apply label "AI-Receipt", archive
-SPAM → Archive immediately
-</pre>`
+<h3>Setting Up Email Triage in Make</h3>
+<ol>
+<li>Trigger: New email in Gmail (filter to inbox only)</li>
+<li>Claude: classify with the prompt above</li>
+<li>Router: branch based on Claude's one-word output</li>
+<li>URGENT branch: apply label "Urgent" + send Telegram/Slack notification</li>
+<li>NEWSLETTER branch: apply label "Newsletter" + archive</li>
+<li>RECEIPT branch: apply label "Receipts" + archive + log to Sheets</li>
+</ol>`
       },
       {
         id: 4,
-        title: "AI Research Assistant",
-        description: "Build a personal AI researcher that delivers intelligence on any topic",
+        title: "Personal Research and Knowledge Management",
+        description: "Build a searchable record of everything you learn — and actually find it again",
         duration: "20 min",
-        content: `<h2>Your Personal Intelligence Analyst</h2>
-<p>One of the highest-value uses of AI is as a research assistant — but most people use it reactively (ask a question, get an answer). Build a proactive research system instead.</p>
+        content: `<h2>Stop Losing What You Learn</h2>
+<p>Most people learn something, save a link, and never look at it again. A personal knowledge system changes this — AI captures, organises, and retrieves what you've learned.</p>
 
-<h3>Use Cases for Proactive Research</h3>
+<h3>The Capture → Process → Retrieve Loop</h3>
 <ul>
-<li><strong>Competitor monitoring:</strong> Weekly summary of what competitors published, announced, or changed</li>
-<li><strong>Client intelligence:</strong> Before a sales call, auto-generate a briefing on the prospect</li>
-<li><strong>Industry trends:</strong> Weekly "State of [Your Industry]" report delivered to your inbox</li>
-<li><strong>Topic deep-dives:</strong> Send a message to your agent: "Research [topic] and give me a 500-word briefing with the key things I need to know"</li>
+<li><strong>Capture:</strong> anything interesting gets sent to a single inbox (a dedicated email, Telegram channel, or Notion inbox)</li>
+<li><strong>Process:</strong> AI automatically summarises, tags, and categorises it</li>
+<li><strong>Retrieve:</strong> when you need it, ask your agent — it searches semantically, not just by keyword</li>
 </ul>
 
-<h3>Building a Competitor Monitor</h3>
+<h3>The Capture Flow (OpenClaw + Telegram)</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-Trigger: Every Monday 8am
+You send a URL or text to your agent via Telegram
 
-For each competitor (loop):
-1. HTTP → fetch their blog RSS feed
-2. HTTP → search Google News for "[competitor name]"
-3. Claude: "Summarise what [competitor] published or 
-   announced this week. What's new? What's changed?
-   What should I know? Under 150 words."
+Claude processes it:
+- If URL: fetch the page, summarise key points (5 bullet points)
+- Extract: main idea, why it matters, relevance to your work
+- Add tags: [topic], [type: article/tool/research], [priority]
+- Save to Notion database with all metadata
 
-Combine all summaries + Claude:
-"You are a competitive intelligence analyst.
-Here are summaries of what my competitors did this week:
-[all summaries]
-What are the key takeaways? What should I do differently?
-What opportunities do you see?"
-
-Send to email as "Weekly Competitor Intelligence"
+When you ask "what do I know about [topic]?"
+→ QMD searches semantically across all saved items
+→ Returns the most relevant results
+→ Claude synthesises them into a useful answer
 </pre>
 
-<h3>The Pre-Call Client Briefing</h3>
-<p>Paste this into your OpenClaw via Telegram before any sales call:</p>
+<h3>Pre-Call Research (for client and sales meetings)</h3>
+<p>Send this to your OpenClaw agent 1 hour before any important call:</p>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
 I have a call in 1 hour with [name] at [company].
-Research the company and person and give me:
+Research and give me:
 - What the company does (2 sentences)
-- Their recent news or announcements
-- The person's role and background
+- Recent news or announcements
+- The person's role and background (from LinkedIn)
 - 3 good conversation openers
 - Any potential pain points my service could address
 </pre>`
       },
       {
         id: 5,
-        title: "Automating Your Finances and Admin",
-        description: "Use AI to handle the admin that drains your time and energy",
+        title: "Automating Recurring Admin",
+        description: "Weekly reports, invoice processing, meeting notes — set up once, run forever",
         duration: "20 min",
         content: `<h2>Admin on Autopilot</h2>
-<p>Admin tasks don't require your intelligence — they require consistency. AI is perfect for this. Here are the highest-value admin automations to build.</p>
+<p>Admin tasks don't require your intelligence — they require consistency. AI is perfect for this.</p>
 
 <h3>Weekly Revenue Report</h3>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
 Trigger: Every Friday at 5pm
-
-Steps:
-1. Stripe API → get this week's payments
-2. Calculate: total revenue, new customers, MRR change
-3. Compare to last week and last month
-4. Claude: "Here are my revenue numbers for this week:
-   [data]. Write a concise weekly business summary
-   covering: revenue, trends, what worked, what to
-   focus on next week. Under 200 words."
-5. Send to email as "Weekly Business Review"
+↓
+Stripe API: this week's revenue, new customers, MRR change
+↓
+Compare to last week and last month
+↓
+Claude: "Write a concise weekly business summary:
+revenue, trends, one thing that worked, one focus for next week.
+Data: [Stripe data]. Under 200 words."
+↓
+Email to yourself: "Weekly Business Review — [Date]"
 </pre>
 
-<h3>Invoice Processing</h3>
-<p>Forward invoices to your AgentMail inbox → AI extracts: vendor, amount, due date, category → Logs to Google Sheet → Alerts you if due within 7 days.</p>
-
-<h3>Meeting Notes and Actions</h3>
-<p>After every meeting:</p>
+<h3>Meeting Notes and Action Items</h3>
 <ol>
-<li>Record with Otter.ai or Fireflies (auto-transcribes)</li>
+<li>Record meetings with Otter.ai or Fireflies (auto-transcribes)</li>
 <li>Make webhook receives transcript automatically</li>
-<li>Claude: "From this meeting transcript, extract: 1) Key decisions made, 2) Action items with owner and deadline, 3) Any follow-ups needed. Format as bullet points."</li>
-<li>Results emailed to all attendees automatically</li>
+<li>Claude: "Extract from this transcript: key decisions, action items with owner and deadline, any follow-ups needed"</li>
+<li>Results emailed to all attendees and logged to Notion</li>
 </ol>
 
 <h3>Social Media Scheduling</h3>
-<p>Build once, runs forever:</p>
-<ul>
-<li>Every Sunday you spend 30 minutes writing bullet points for the week's content</li>
-<li>Paste into Claude: "Expand these into 7 LinkedIn posts (one per day). Professional but conversational. End each with a question."</li>
-<li>Claude expands → Make loads into Buffer → Posts automatically all week</li>
-</ul>`
-      },
-      {
-        id: 6,
-        title: "Building Your Personal Knowledge System",
-        description: "Use AI to capture, organise, and retrieve everything you learn",
-        duration: "18 min",
-        content: `<h2>Never Forget Anything Again</h2>
-<p>Most people learn something interesting, save a link, and never look at it again. A personal knowledge system — powered by AI — changes this fundamentally.</p>
-
-<h3>The Stack</h3>
-<ul>
-<li><strong>Capture:</strong> Anything interesting gets sent to your knowledge inbox (a dedicated email, Telegram channel, or Notion inbox)</li>
-<li><strong>Process:</strong> AI automatically summarises, tags, and categorises what you captured</li>
-<li><strong>Retrieve:</strong> When you need something, ask your AI agent — it searches your knowledge base semantically (this is where QMD shines)</li>
-<li><strong>Review:</strong> Weekly digest of what you've learned, with connections to other things you know</li>
-</ul>
-
-<h3>The Capture → Process Flow</h3>
+<p>Every Sunday, spend 20 minutes writing bullet points for the week's content. Paste into Claude:</p>
 <pre class="bg-gray-800 p-4 rounded-lg text-sm overflow-x-auto">
-You send a URL or text to Telegram → OpenClaw receives it
-
-Claude processes it:
-- If URL: fetch the page, summarise it
-- Extract: key ideas, quotes, why it's useful
-- Add tags: [topic], [type], [relevance to your goals]
-- Save to Notion database with all metadata
-
-When you ask "what do I know about [topic]?"
-→ QMD searches your Notion database semantically
-→ Returns the most relevant items you've saved
-→ Claude synthesises them into a useful answer
+Expand these into 5 LinkedIn posts — one per weekday.
+Professional but conversational tone.
+End each with a question to encourage comments.
+Keep each under 200 words.
+Bullet points: [your notes]
 </pre>
+<p>Claude expands → Make loads into Buffer → posts automatically all week.</p>
 
-<h3>The Weekly Knowledge Review</h3>
-<p>Every Sunday, your system automatically:</p>
-<ol>
-<li>Lists everything you captured and processed this week</li>
-<li>Claude identifies connections between new items and your existing knowledge</li>
-<li>Suggests 3 things you should apply or act on from what you learned</li>
-<li>Delivers the review to your inbox</li>
-</ol>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>💡 The Compound Effect</h4>
-<p>After 6 months of running this system, you have a searchable, AI-queryable record of everything you've learned. It becomes one of the most valuable personal assets you own.</p>
-</div>`
-      },
-      {
-        id: 7,
-        title: "Your Personal AI Dashboard",
-        description: "Bring everything together into a central control system",
-        duration: "15 min",
-        content: `<h2>Your Command Centre</h2>
-<p>Once you have several AI systems running, you need a way to see everything at a glance and control it from one place. This is your personal AI dashboard.</p>
-
-<h3>What to Include</h3>
-<ul>
-<li><strong>Today's briefing</strong> — the morning summary delivered to you daily</li>
-<li><strong>Inbox triage status</strong> — how many urgent/important emails today</li>
-<li><strong>Revenue snapshot</strong> — this week vs last week</li>
-<li><strong>Content pipeline status</strong> — what's published, what's scheduled</li>
-<li><strong>Active automations</strong> — which Make scenarios are running and their last run status</li>
-<li><strong>Knowledge captures this week</strong> — what you've added to your knowledge base</li>
-</ul>
-
-<h3>The Simplest Implementation</h3>
-<p>A Notion page that pulls live data via Make automations. Every section gets updated automatically:</p>
-<ol>
-<li>Create a Notion page: "AI Dashboard"</li>
-<li>Add sections for each area above</li>
-<li>Build small Make automations that update each section on schedule</li>
-<li>Make the page your browser home page</li>
-</ol>
-
-<h3>Telegram as Your Control Interface</h3>
-<p>If you use OpenClaw, your Telegram becomes your control interface. Commands you can run:</p>
-<ul>
-<li>"Morning briefing" → triggers your briefing early</li>
-<li>"Research [topic]" → instant deep dive</li>
-<li>"Inbox summary" → what needs my attention today</li>
-<li>"Revenue this week" → pulls from Stripe and summarises</li>
-<li>"Draft reply to [name]" → fetches the email and drafts a response</li>
-</ul>
-
-<div class="bg-green-900/30 p-4 rounded-lg mt-6">
-<h4>🎉 Course Complete!</h4>
-<p>You now have everything — the mindset, the tools, the service businesses, the automation systems, the coding capability, the desktop agents, and the personal productivity infrastructure to make serious money with AI in 2026. The market is wide open. Go build something.</p>
-</div>`
+<h3>The Compound Effect</h3>
+<p>Each of these takes 2–3 hours to set up and saves 2–5 hours per week indefinitely. After 6 months of building these systems, you're working substantially fewer hours for the same or better output. That's the real value of AI for personal productivity.</p>`
       }
     ]
   }
