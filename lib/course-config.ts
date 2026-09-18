@@ -1,58 +1,60 @@
-export const courseConfig = {
-  productName: "AI Money Maniac: AI Income Launchpad",
-  shortName: "AI Income Launchpad",
-  tagline: "Build and monetise a real AI-powered offer. Content, Services or Products — choose your path.",
+// lib/course-config.ts
+// Single source of truth for all public-facing product facts.
+// Update values here; every page reads from this file automatically.
 
-  // Pricing — USD
+export const courseConfig = {
+  productName: 'AI Money Maniac: AI Income Launchpad 2026',
   currentPrice: 47,
   regularPrice: 97,
-  currency: "USD",
-  currencySymbol: "$",
-  offerName: "Founding Member",
-  offerDeadline: new Date("2026-10-31T23:59:59Z"),
-  offerDeadlineLabel: "Regular price from 1 November",
+  currency: 'USD',
+  offerName: 'Founding Member',
+  // ISO 8601 – when this passes, the site automatically switches to regularPrice
+  offerDeadline: '2026-10-31T23:59:59Z',
   refundDays: 30,
-
-  // Curriculum — update these when lessons change
-  moduleCount: 8,
-  lastCurriculumReview: "September 2026",
-
-  // Channel — update when stats change
-  youtubeSubscribers: "17.6K",
+  // Update these when you publish new data
   youtubeVideos: 214,
-  youtubeChannelUrl: "https://www.youtube.com/@aimoneymaniac",
+  lastCurriculumReview: '2026-09',
+  // Contact and social
+  contactEmail: 'hello@aimoneymaniac.com',
+  founderName: 'David dos Santos',
+  youtubeUrl: 'https://www.youtube.com/@AI-MoneyManiac',
+  siteUrl: 'https://www.aimoneymaniac.com',
+} as const
 
-  // Contact
-  contactEmail: "hello@aimoneymaniac.com",
-  founderName: "David dos Santos",
-  siteName: "AI Money Maniac",
-  siteUrl: "https://www.aimoneymaniac.com",
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
-  earningsDisclaimer:
-    "AI Money Maniac provides education, examples and practical resources. " +
-    "Purchasing or completing the course does not guarantee income, clients, employment or business results. " +
-    "Outcomes depend on the student's skills, effort, market, offer and execution.",
-} as const;
-
+/** Returns true if the founding-member offer deadline has not yet passed. */
 export function isOfferActive(): boolean {
-  return new Date() < new Date(courseConfig.offerDeadline);
+  return new Date() < new Date(courseConfig.offerDeadline)
 }
 
+/** The price currently shown on the site. */
 export function getActivePrice(): number {
-  return isOfferActive() ? courseConfig.currentPrice : courseConfig.regularPrice;
+  return isOfferActive() ? courseConfig.currentPrice : courseConfig.regularPrice
 }
 
+/** Formatted e.g. "$47" */
 export function getActivePriceFormatted(): string {
-  return `$${getActivePrice()}`;
+  return `$${getActivePrice()}`
 }
 
+/** Formatted e.g. "$97" */
 export function getRegularPriceFormatted(): string {
-  return `$${courseConfig.regularPrice}`;
+  return `$${courseConfig.regularPrice}`
 }
 
+/**
+ * A short pricing note for CTAs and microcopy.
+ * Shows founding-member language while the offer is active.
+ */
 export function getPricingNote(): string {
   if (isOfferActive()) {
-    return `${courseConfig.offerName} price · ${courseConfig.offerDeadlineLabel}: ${getRegularPriceFormatted()}`;
+    const deadline = new Date(courseConfig.offerDeadline).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    })
+    return `One-time founding-member payment of $${courseConfig.currentPrice} until ${deadline}, then $${courseConfig.regularPrice}`
   }
-  return "One-time payment · Lifetime access";
+  return `One-time payment of $${courseConfig.regularPrice} · Lifetime access`
 }
