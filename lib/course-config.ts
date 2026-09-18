@@ -4,6 +4,7 @@
 
 export const courseConfig = {
   productName: 'AI Money Maniac: AI Income Launchpad 2026',
+  siteName: 'AI Money Maniac',
   currentPrice: 47,
   regularPrice: 97,
   currency: 'USD',
@@ -19,6 +20,8 @@ export const courseConfig = {
   founderName: 'David dos Santos',
   youtubeUrl: 'https://www.youtube.com/@AI-MoneyManiac',
   siteUrl: 'https://www.aimoneymaniac.com',
+  earningsDisclaimer:
+    'Results vary. We make no guarantee that you will earn any specific income. Any financial outcomes depend on your individual effort, experience, and market conditions.',
 } as const
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
