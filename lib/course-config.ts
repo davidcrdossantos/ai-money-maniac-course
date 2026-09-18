@@ -5,13 +5,18 @@
 export const courseConfig = {
   productName: 'AI Money Maniac: AI Income Launchpad 2026',
   siteName: 'AI Money Maniac',
+  tagline: 'Real AI income strategies — no fluff, no hype, just what works.',
   currentPrice: 47,
   regularPrice: 97,
   currency: 'USD',
   offerName: 'Founding Member',
   // ISO 8601 – when this passes, the site automatically switches to regularPrice
   offerDeadline: '2026-10-31T23:59:59Z',
+  offerDeadlineLabel: 'ends 31 October 2026',
   refundDays: 30,
+  // Course structure — keep in sync with course-data.ts
+  moduleCount: 9,
+  lessonCount: 72,
   // Update these when you publish new data
   youtubeVideos: 214,
   lastCurriculumReview: '2026-09',
@@ -19,6 +24,7 @@ export const courseConfig = {
   contactEmail: 'hello@aimoneymaniac.com',
   founderName: 'David dos Santos',
   youtubeUrl: 'https://www.youtube.com/@AI-MoneyManiac',
+  youtubeChannelUrl: 'https://www.youtube.com/@AI-MoneyManiac',
   siteUrl: 'https://www.aimoneymaniac.com',
   earningsDisclaimer:
     'Results vary. We make no guarantee that you will earn any specific income. Any financial outcomes depend on your individual effort, experience, and market conditions.',
