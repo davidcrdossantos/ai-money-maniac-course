@@ -25,7 +25,7 @@ export interface Module {
 
 export const modules: Module[] = [
   {
-    id: 'module-1',
+    id: '1',
     title: 'Introduction to AI, Your New Business Toolkit',
     description:
       'Build a solid foundation: understand what AI actually does, set up a productive workspace and identify a customer problem worth solving.',
@@ -112,7 +112,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-2',
+    id: '2',
     title: 'The One-Person AI Creative Studio',
     description:
       'Produce and package professional images, video and advertising assets for a specific business niche – and turn them into a repeatable service offer.',
@@ -199,7 +199,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-3',
+    id: '3',
     title: 'Digital Products That Solve a Specific Problem',
     description:
       'Design, validate and launch an original digital product with a defined audience and a real distribution plan – not just another generic template.',
@@ -286,7 +286,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-4',
+    id: '4',
     title: 'Build Websites and Business Tools With AI',
     description:
       'Build, test and deliver a functioning website or small business application from a written brief – with a real handover pack a client can actually use.',
@@ -373,7 +373,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-5',
+    id: '5',
     title: 'Build a Lead Delivery Business',
     description:
       'Research suitable prospects and build a measurable, compliant system that delivers an agreed type of lead to a business – with commercial terms that make it worth running.',
@@ -460,7 +460,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-6',
+    id: '6',
     title: 'AI Receptionists, Chat Assistants and Voice Agents',
     description:
       'Build a conversational assistant that answers approved questions, captures enquiries and hands off reliably – and package it as a managed service for a business.',
@@ -547,7 +547,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-7',
+    id: '7',
     title: 'Build Complex AI Agents and Connected Business Systems',
     description:
       'Design, build and evaluate a multi-step agent system with tools, state, specialist roles and controlled external actions – then sell it as an operational service.',
@@ -634,7 +634,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-8',
+    id: '8',
     title: 'Launch a Focused AI Micro-SaaS',
     description:
       'Convert one repeated customer task into a small subscription product with real operating economics, a tested billing path and users who actually come back.',
@@ -721,7 +721,7 @@ export const modules: Module[] = [
     ],
   },
   {
-    id: 'module-9',
+    id: '9',
     title: 'Win Customers and Build a Profitable Operation',
     description:
       'Launch one chosen offer with a repeatable sales process, clear delivery scope and financial controls. Leave with a portfolio, a defined offer and a practical system for selling and delivering it.',
