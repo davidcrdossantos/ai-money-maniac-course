@@ -826,3 +826,9 @@ export function getTotalLessonCount(): number {
 export function getModuleCount(): number {
   return modules.length
 }
+
+// ─── Backward-compatibility aliases ───────────────────────────────────────────
+// The course/dashboard/certificate pages import these names.
+// Keep them in sync with the exports above.
+export const courseModules = modules
+export const getTotalLessons = getTotalLessonCount
