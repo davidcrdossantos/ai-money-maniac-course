@@ -9,7 +9,7 @@ import type { Module } from "@/lib/course-data";
 
 interface LessonSidebarProps {
   module: Module;
-  completedLessons: number[];
+  completedLessons: number[]; // 1-indexed lesson positions stored in DB
 }
 
 export function LessonSidebar({ module, completedLessons }: LessonSidebarProps) {
@@ -34,12 +34,14 @@ export function LessonSidebar({ module, completedLessons }: LessonSidebarProps) 
       </div>
 
       <div className="p-4">
-        <h2 className="text-lg font-bold text-white mb-1">Module {module?.id ?? 0}</h2>
+        <h2 className="text-lg font-bold text-white mb-1">Module {module?.id ?? ""}</h2>
         <p className="text-sm text-gray-400 mb-4">{module?.title ?? ""}</p>
 
         <div className="space-y-1">
           {(module?.lessons ?? []).map((lesson, index) => {
-            const isCompleted = safeCompletedLessons.includes(lesson?.id ?? 0);
+            // Lesson completion is tracked by 1-indexed position within module
+            const lessonPosition = index + 1;
+            const isCompleted = safeCompletedLessons.includes(lessonPosition);
             const isActive = pathname === `/course/module/${module?.id}/lesson/${lesson?.id}`;
 
             return (

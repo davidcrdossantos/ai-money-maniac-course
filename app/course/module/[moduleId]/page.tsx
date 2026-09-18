@@ -20,12 +20,16 @@ export default function ModulePage() {
   const { data: session, status } = useSession() || {};
   const router = useRouter();
   const params = useParams();
-  const moduleId = parseInt(params?.moduleId as string ?? "1");
+
+  // String ID for course-data lookups; numeric for DB comparisons
+  const moduleIdStr = (params?.moduleId as string) ?? "1";
+  const moduleIdNum = parseInt(moduleIdStr, 10);
+
   const [progress, setProgress] = useState<Progress[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasPurchased, setHasPurchased] = useState<boolean | null>(null);
 
-  const module = (courseModules ?? []).find((m) => m?.id === moduleId);
+  const module = (courseModules ?? []).find((m) => m?.id === moduleIdStr);
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -90,15 +94,19 @@ export default function ModulePage() {
   }
 
   const moduleLessons = module?.lessons ?? [];
-  const completedLessons = (progress ?? []).filter((p) => p?.moduleId === moduleId);
+  const completedLessons = (progress ?? []).filter((p) => p?.moduleId === moduleIdNum);
   const moduleProgress = moduleLessons.length > 0 ? (completedLessons.length / moduleLessons.length) * 100 : 0;
 
-  const isLessonCompleted = (lessonId: number) => {
-    return (progress ?? []).some((p) => p?.moduleId === moduleId && p?.lessonId === lessonId);
+  // Check completion by 1-indexed lesson position stored in DB
+  const isLessonCompleted = (lessonPosition: number) => {
+    return (progress ?? []).some(
+      (p) => p?.moduleId === moduleIdNum && p?.lessonId === lessonPosition
+    );
   };
 
-  // Find next incomplete lesson
-  const nextLesson = moduleLessons.find((l) => !isLessonCompleted(l?.id ?? 0));
+  // Find next incomplete lesson by index position
+  const nextLessonIndex = moduleLessons.findIndex((_, i) => !isLessonCompleted(i + 1));
+  const nextLesson = nextLessonIndex >= 0 ? moduleLessons[nextLessonIndex] : null;
 
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-gray-900">
@@ -113,7 +121,7 @@ export default function ModulePage() {
             Course
           </Link>
           <ChevronRight className="w-4 h-4" />
-          <span className="text-white">Module {moduleId}</span>
+          <span className="text-white">Module {moduleIdNum}</span>
         </nav>
 
         {/* Back Button */}
@@ -131,7 +139,7 @@ export default function ModulePage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <span className="text-green-400 text-sm font-medium">Module {moduleId}</span>
+          <span className="text-green-400 text-sm font-medium">Module {moduleIdNum}</span>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {module?.title ?? ""}
           </h1>
@@ -163,7 +171,7 @@ export default function ModulePage() {
             transition={{ delay: 0.1 }}
             className="mb-8"
           >
-            <Link href={`/course/module/${moduleId}/lesson/${nextLesson?.id}`}>
+            <Link href={`/course/module/${moduleIdStr}/lesson/${nextLesson?.id}`}>
               <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-6 hover:from-green-600 hover:to-emerald-700 transition-all group">
                 <div className="flex items-center justify-between">
                   <div>
@@ -186,7 +194,8 @@ export default function ModulePage() {
           <h2 className="text-xl font-bold text-white mb-4">Lessons</h2>
           <div className="space-y-3">
             {moduleLessons.map((lesson, index) => {
-              const completed = isLessonCompleted(lesson?.id ?? 0);
+              // Lesson position is 1-indexed
+              const completed = isLessonCompleted(index + 1);
               return (
                 <motion.div
                   key={lesson?.id ?? index}
@@ -194,7 +203,7 @@ export default function ModulePage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Link href={`/course/module/${moduleId}/lesson/${lesson?.id}`}>
+                  <Link href={`/course/module/${moduleIdStr}/lesson/${lesson?.id}`}>
                     <div className={`flex items-center gap-4 p-4 rounded-xl transition-all border ${
                       completed
                         ? "bg-green-500/10 border-green-500/30 hover:border-green-500/50"

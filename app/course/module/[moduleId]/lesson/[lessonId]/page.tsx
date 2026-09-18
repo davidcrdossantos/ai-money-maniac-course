@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Loader2, ChevronRight, ChevronLeft, ExternalLink, Clock, Download } from "lucide-react";
+import { Loader2, ChevronRight, ChevronLeft, Clock, Download } from "lucide-react";
 import Link from "next/link";
 import { courseModules } from "@/lib/course-data";
 import { LessonSidebar } from "@/components/lesson-sidebar";
@@ -21,19 +21,33 @@ export default function LessonPage() {
   const { data: session, status } = useSession() || {};
   const router = useRouter();
   const params = useParams();
-  const moduleId = parseInt(params?.moduleId as string ?? "1");
-  const lessonId = parseInt(params?.lessonId as string ?? "1");
+
+  // String IDs for course-data lookups
+  // Module IDs are '1'–'9'; lesson IDs are '1-1', '1-2', …, '9-8'
+  const moduleIdStr = (params?.moduleId as string) ?? "1";
+  const lessonIdStr = (params?.lessonId as string) ?? "1-1";
+
+  // Numeric module ID for DB / Progress comparisons
+  const moduleIdNum = parseInt(moduleIdStr, 10);
+
   const [progress, setProgress] = useState<Progress[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasPurchased, setHasPurchased] = useState<boolean | null>(null);
 
-  const module = (courseModules ?? []).find((m) => m?.id === moduleId);
+  const module = (courseModules ?? []).find((m) => m?.id === moduleIdStr);
   const lessons = module?.lessons ?? [];
-  const lesson = lessons.find((l) => l?.id === lessonId);
-  const currentIndex = lessons.findIndex((l) => l?.id === lessonId);
+  const lesson = lessons.find((l) => l?.id === lessonIdStr);
+  const currentIndex = lessons.findIndex((l) => l?.id === lessonIdStr);
+
+  // Lesson position within module (1-indexed) — this is what gets stored in the DB
+  const lessonIdNum = currentIndex >= 0 ? currentIndex + 1 : 1;
+
   const prevLesson = currentIndex > 0 ? lessons[currentIndex - 1] : null;
-  const nextLesson = currentIndex < lessons.length - 1 ? lessons[currentIndex + 1] : null;
-  const nextModule = (courseModules ?? []).find((m) => m?.id === moduleId + 1);
+  const nextLesson =
+    currentIndex < lessons.length - 1 ? lessons[currentIndex + 1] : null;
+  const nextModule = (courseModules ?? []).find(
+    (m) => m?.id === String(moduleIdNum + 1)
+  );
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -75,18 +89,27 @@ export default function LessonPage() {
   };
 
   const isCompleted = (progress ?? []).some(
-    (p) => p?.moduleId === moduleId && p?.lessonId === lessonId
+    (p) => p?.moduleId === moduleIdNum && p?.lessonId === lessonIdNum
   );
 
+  // completedLessons is an array of 1-indexed lesson positions for this module
   const completedLessonIds = (progress ?? [])
-    .filter((p) => p?.moduleId === moduleId)
+    .filter((p) => p?.moduleId === moduleIdNum)
     .map((p) => p?.lessonId);
 
   const handleToggleComplete = (completed: boolean) => {
     if (completed) {
-      setProgress([...progress, { moduleId, lessonId, completed: true }]);
+      setProgress([
+        ...progress,
+        { moduleId: moduleIdNum, lessonId: lessonIdNum, completed: true },
+      ]);
     } else {
-      setProgress(progress.filter((p) => !(p?.moduleId === moduleId && p?.lessonId === lessonId)));
+      setProgress(
+        progress.filter(
+          (p) =>
+            !(p?.moduleId === moduleIdNum && p?.lessonId === lessonIdNum)
+        )
+      );
     }
   };
 
@@ -129,11 +152,14 @@ export default function LessonPage() {
               Course
             </Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href={`/course/module/${moduleId}`} className="hover:text-white transition-colors">
-              Module {moduleId}
+            <Link
+              href={`/course/module/${moduleIdStr}`}
+              className="hover:text-white transition-colors"
+            >
+              Module {moduleIdNum}
             </Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Lesson {lessonId}</span>
+            <span className="text-white">Lesson {lessonIdNum}</span>
           </nav>
 
           {/* Lesson Header */}
@@ -143,9 +169,11 @@ export default function LessonPage() {
             className="mb-8"
           >
             <div className="flex items-center gap-2 text-green-400 text-sm mb-2">
-              <span>Module {moduleId}</span>
+              <span>Module {moduleIdNum}</span>
               <span>•</span>
-              <span>Lesson {currentIndex + 1} of {lessons.length}</span>
+              <span>
+                Lesson {currentIndex + 1} of {lessons.length}
+              </span>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
               {lesson?.title ?? ""}
@@ -155,22 +183,29 @@ export default function LessonPage() {
                 <Clock className="w-4 h-4" />
                 {lesson?.duration ?? ""}
               </div>
+              {lesson?.practiceTime && (
+                <>
+                  <span>·</span>
+                  <span>{lesson.practiceTime} practice</span>
+                </>
+              )}
             </div>
           </motion.div>
 
-
-
-          {/* Lesson Content */}
+          {/* Lesson Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="lesson-content mb-8"
-            dangerouslySetInnerHTML={{ __html: lesson?.content ?? "" }}
-          />
+          >
+            <p className="text-gray-300 leading-relaxed text-base">
+              {lesson?.description ?? ""}
+            </p>
+          </motion.div>
 
           {/* Resources */}
-          {lesson?.resources && (lesson.resources?.length ?? 0) > 0 && (
+          {lesson?.resourcesIncluded && lesson.resourcesIncluded.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -179,20 +214,14 @@ export default function LessonPage() {
             >
               <h3 className="text-xl font-bold text-white mb-4">Resources</h3>
               <div className="space-y-2">
-                {(lesson.resources ?? []).map((resource, index) => (
-                  <a
+                {lesson.resourcesIncluded.map((resource, index) => (
+                  <div
                     key={index}
-                    href={resource?.url ?? "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-green-500/30 transition-all group"
+                    className="flex items-center gap-3 p-4 bg-gray-800/50 rounded-lg border border-gray-700/50"
                   >
-                    <Download className="w-5 h-5 text-green-400" />
-                    <span className="flex-1 text-white group-hover:text-green-400 transition-colors">
-                      {resource?.title ?? "Resource"}
-                    </span>
-                    <ExternalLink className="w-4 h-4 text-gray-500" />
-                  </a>
+                    <Download className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <span className="flex-1 text-white">{resource}</span>
+                  </div>
                 ))}
               </div>
             </motion.div>
@@ -206,8 +235,8 @@ export default function LessonPage() {
             className="mb-8"
           >
             <LessonCompletion
-              moduleId={moduleId}
-              lessonId={lessonId}
+              moduleId={moduleIdNum}
+              lessonId={lessonIdNum}
               isCompleted={isCompleted}
               onToggle={handleToggleComplete}
             />
@@ -222,12 +251,11 @@ export default function LessonPage() {
           >
             {prevLesson ? (
               <Link
-                href={`/course/module/${moduleId}/lesson/${prevLesson?.id}`}
+                href={`/course/module/${moduleIdStr}/lesson/${prevLesson?.id}`}
                 className="flex items-center gap-2 px-4 py-2 text-gray-200 hover:text-white bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
-                <span className="hidden sm:inline">Previous</span>
-                <span className="sm:hidden">Previous</span>
+                <span>Previous</span>
               </Link>
             ) : (
               <div />
@@ -235,11 +263,10 @@ export default function LessonPage() {
 
             {nextLesson ? (
               <Link
-                href={`/course/module/${moduleId}/lesson/${nextLesson?.id}`}
+                href={`/course/module/${moduleIdStr}/lesson/${nextLesson?.id}`}
                 className="flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all"
               >
-                <span className="hidden sm:inline">Next Lesson</span>
-                <span className="sm:hidden">Next</span>
+                <span>Next Lesson</span>
                 <ChevronRight className="w-5 h-5" />
               </Link>
             ) : nextModule ? (
@@ -247,7 +274,7 @@ export default function LessonPage() {
                 href={`/course/module/${nextModule?.id}`}
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all"
               >
-                <span>Start Module {nextModule?.id}</span>
+                <span>Start Module {moduleIdNum + 1}</span>
                 <ChevronRight className="w-5 h-5" />
               </Link>
             ) : (

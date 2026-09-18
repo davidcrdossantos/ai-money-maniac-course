@@ -83,16 +83,26 @@ export default function DashboardPage() {
   const completedLessons = progress?.length ?? 0;
   const overallProgress = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
 
-  // Find next lesson to continue
+  // Find next incomplete lesson
+  // Progress stores moduleId as integer (1–9) and lessonId as 1-indexed position within module
   const findNextLesson = () => {
     const safeProgress = progress ?? [];
-    for (const module of courseModules ?? []) {
-      for (const lesson of module?.lessons ?? []) {
+    for (const mod of courseModules ?? []) {
+      const moduleIdNum = parseInt(mod?.id ?? "0", 10);
+      const lessons = mod?.lessons ?? [];
+      for (let i = 0; i < lessons.length; i++) {
+        const lesson = lessons[i];
+        const lessonPosition = i + 1; // 1-indexed
         const isCompleted = safeProgress.some(
-          (p) => p?.moduleId === module?.id && p?.lessonId === lesson?.id
+          (p) => p?.moduleId === moduleIdNum && p?.lessonId === lessonPosition
         );
         if (!isCompleted) {
-          return { moduleId: module?.id, lessonId: lesson?.id, moduleTitle: module?.title, lessonTitle: lesson?.title };
+          return {
+            moduleId: mod?.id,
+            lessonId: lesson?.id,
+            moduleTitle: mod?.title,
+            lessonTitle: lesson?.title,
+          };
         }
       }
     }
@@ -101,10 +111,13 @@ export default function DashboardPage() {
 
   const nextLesson = findNextLesson();
 
-  const getModuleProgress = (moduleId: number) => {
-    const module = (courseModules ?? []).find((m) => m?.id === moduleId);
-    const moduleLessons = module?.lessons?.length ?? 0;
-    const completedModuleLessons = (progress ?? []).filter((p) => p?.moduleId === moduleId)?.length ?? 0;
+  // moduleIdStr is a string ('1'–'9') matching course-data IDs
+  const getModuleProgress = (moduleIdStr: string) => {
+    const mod = (courseModules ?? []).find((m) => m?.id === moduleIdStr);
+    const moduleLessons = mod?.lessons?.length ?? 0;
+    const moduleIdNum = parseInt(moduleIdStr, 10);
+    const completedModuleLessons =
+      (progress ?? []).filter((p) => p?.moduleId === moduleIdNum)?.length ?? 0;
     return {
       progress: moduleLessons > 0 ? (completedModuleLessons / moduleLessons) * 100 : 0,
       completed: completedModuleLessons,
@@ -163,7 +176,7 @@ export default function DashboardPage() {
               </div>
               <span className="text-gray-400 text-sm">Modules</span>
             </div>
-            <p className="text-3xl font-bold text-white">6</p>
+            <p className="text-3xl font-bold text-white">{courseModules.length}</p>
           </div>
 
           <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
@@ -260,7 +273,7 @@ export default function DashboardPage() {
           <h2 className="text-2xl font-bold text-white mb-6">Your Modules</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(courseModules ?? []).map((module, index) => {
-              const moduleProgress = getModuleProgress(module?.id ?? 0);
+              const moduleProgress = getModuleProgress(module?.id ?? "1");
               return (
                 <ModuleCard
                   key={module?.id ?? index}

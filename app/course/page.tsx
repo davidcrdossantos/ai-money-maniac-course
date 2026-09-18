@@ -83,10 +83,13 @@ export default function CoursePage() {
   const completedLessons = progress?.length ?? 0;
   const overallProgress = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
 
-  const getModuleProgress = (moduleId: number) => {
-    const module = (courseModules ?? []).find((m) => m?.id === moduleId);
-    const moduleLessons = module?.lessons?.length ?? 0;
-    const completedModuleLessons = (progress ?? []).filter((p) => p?.moduleId === moduleId)?.length ?? 0;
+  // moduleIdStr is a string ('1'–'9') matching course-data IDs
+  const getModuleProgress = (moduleIdStr: string) => {
+    const mod = (courseModules ?? []).find((m) => m?.id === moduleIdStr);
+    const moduleLessons = mod?.lessons?.length ?? 0;
+    const moduleIdNum = parseInt(moduleIdStr, 10);
+    const completedModuleLessons =
+      (progress ?? []).filter((p) => p?.moduleId === moduleIdNum)?.length ?? 0;
     return {
       progress: moduleLessons > 0 ? (completedModuleLessons / moduleLessons) * 100 : 0,
       completed: completedModuleLessons,
@@ -116,7 +119,7 @@ export default function CoursePage() {
             AI Money Maniac <span className="text-green-400">Course</span>
           </h1>
           <p className="text-gray-400 mb-6 max-w-2xl">
-            Master AI tools and build profitable online businesses. Complete all 6 modules to unlock your AI-powered income potential.
+            Master AI tools and build profitable online businesses. Complete all {courseModules.length} modules to unlock your AI-powered income potential.
           </p>
 
           <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50">
@@ -138,7 +141,7 @@ export default function CoursePage() {
         {/* Modules Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {(courseModules ?? []).map((module, index) => {
-            const moduleProgress = getModuleProgress(module?.id ?? 0);
+            const moduleProgress = getModuleProgress(module?.id ?? "1");
             return (
               <ModuleCard
                 key={module?.id ?? index}
